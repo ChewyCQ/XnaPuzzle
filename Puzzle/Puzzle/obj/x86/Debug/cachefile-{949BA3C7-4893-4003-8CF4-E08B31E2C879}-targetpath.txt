@@ -1,0 +1,22 @@
+Content\Imagenes\Seleccion\El.xnb
+Content\Imagenes\Seleccion\Ella.xnb
+Content\Imagenes\Botones\redo.xnb
+Content\Femenino\Cuerpo.xnb
+Content\Femenino\Ovario derecho.xnb
+Content\Femenino\Ovario izquierdo.xnb
+Content\Femenino\Trompa de Falopio Derecha.xnb
+Content\Femenino\Trompa de Falopio Izquierda.xnb
+Content\Femenino\Uretra.xnb
+Content\Femenino\Vagina.xnb
+Content\Femenino\Vejiga.xnb
+Content\Femenino\Útero.xnb
+Content\Masculino\Conducto_deferente_lado_derecho.xnb
+Content\Masculino\conducto_deferente_lado_Izquierdo.xnb
+Content\Masculino\epididiimio_lado_derecho.xnb
+Content\Masculino\epididimio_lado_izquierdo.xnb
+Content\Masculino\prostata.xnb
+Content\Masculino\tejido_erectil.xnb
+Content\Masculino\testiculos_lado_izquierdo.xnb
+Content\Masculino\testiculo_lado_derecho.xnb
+Content\Masculino\uretra.xnb
+Content\Masculino\vejiga.xnb
