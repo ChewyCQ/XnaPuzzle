@@ -13,8 +13,39 @@ namespace Puzzle
         public Matrix worldTranslation = Matrix.Identity;
         public Matrix worldRotation = Matrix.Identity;
 
+        //Escala
         public Vector3 escala;
 
+        //Rotacion
+        public Vector3 rotacionCorrecta = new Vector3(0,0,0);
+        public Vector3 rotacionInicial = new Vector3(0, 0, 0);
+        public Vector3 rotacionActual = new Vector3(0,0,0);
+    
+        public Vector3 RotacionActual
+        {
+            get
+            {
+                return rotacionActual;
+            }
+            set
+            {
+                if (rotacionActual.X > 2 * MathHelper.Pi)
+                {
+                    rotacionActual.X -= 2 * MathHelper.Pi;
+                }
+                if (rotacionActual.Y > 360)
+                {
+                    rotacionActual.Y -= 360;
+                }
+                if (rotacionActual.Z > 360)
+                {
+                    rotacionActual.Z -= 360;
+                } 
+                rotacionActual = value;
+            }
+        }
+
+        //Coordenadas
         public Vector3 posicionCorrecta = new Vector3(0, 0, 0);
         public Vector3 posicionInicial = new Vector3(0, 0, 0);
         public Vector3 posicionActual = new Vector3(0, 0, 0);
@@ -30,6 +61,7 @@ namespace Puzzle
         {
             model = m;
             this.escala = escala;
+            rotacionActual = new Vector3(0,0,0);
         }
 
         public BasicModel(Model m, float scale, Matrix rotation)
@@ -40,7 +72,12 @@ namespace Puzzle
 
         public virtual void Update()
         {
-
+            if (rotacionActual.X > 360)
+                rotacionActual.X -= 360;
+            if (rotacionActual.Y > 360)
+                rotacionActual.Y -= 360;
+            if (rotacionActual.Z > 360)
+                rotacionActual.Z -= 360;
         }
 
         public void Draw(Camera camera)
@@ -63,7 +100,11 @@ namespace Puzzle
 
         public virtual Matrix GetWorld()
         {
-            return Matrix.CreateScale(escala) * worldRotation * worldTranslation;
+            //Escala * Rotacion * Posicion
+            return Matrix.CreateScale(escala) * 
+                Matrix.CreateFromYawPitchRoll
+                (MathHelper.ToRadians(rotacionActual.X), MathHelper.ToRadians(rotacionActual.Y), MathHelper.ToRadians(rotacionActual.Z)) * 
+                Matrix.CreateTranslation(posicionActual);//worldTranslation
         }
     }//Class
 }

@@ -27,3 +27,4 @@ C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\obj\x8
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\obj\x86\Debug\Puzzle.pdb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\obj\x86\Debug\Puzzle.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Fonts\Fuente.xnb
+C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\aparatoFemenino.xnb

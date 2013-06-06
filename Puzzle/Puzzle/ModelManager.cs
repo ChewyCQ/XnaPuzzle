@@ -94,36 +94,42 @@ namespace Puzzle
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\vejiga"), 
                         new Vector3(1.893f, 1.893f, 1.893f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Masculino\cuerpohumano"),
+                    //    new Vector3(1f, 1f, 1f)));
                     break;
 
                 case sexo.Femenino:
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\aparatoFemenino"),
+                    //    new Vector3(3f, 3f, 3f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Cuerpo"), 
+                    //    new Vector3(7.2f, 7.2f, 7.2f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Ovario derecho"), 
+                    //    new Vector3(2.61f, 1.92f, 1.959f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"), 
+                    //    new Vector3(2.610f, 1.920f, 1.959f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha"), 
+                    //    new Vector3(0.731f, 0.892f, 0.963f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda"), 
+                    //    new Vector3(0.963f, 0.892f, 0.963f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Uretra"), 
+                    //    new Vector3(5.051f, 6.782f, 5.316f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Cuerpo"), 
-                        new Vector3(7.2f, 7.2f, 7.2f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Ovario derecho"), 
-                        new Vector3(2.61f, 1.92f, 1.959f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"), 
-                        new Vector3(2.610f, 1.920f, 1.959f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha"), 
-                        new Vector3(0.731f, 0.892f, 0.963f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda"), 
-                        new Vector3(0.963f, 0.892f, 0.963f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Uretra"), 
-                        new Vector3(5.051f, 6.782f, 5.316f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Útero"), 
+                        Game.Content.Load<Model>(@"Femenino\Útero"),
                         new Vector3(5.028f, 4.260f, 4.268f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Vagina"), 
-                        new Vector3(2.017f, 2.017f, 2.017f)));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Vejiga"), 
-                        new Vector3(1.178f, 1.178f, 1.178f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Vagina"), 
+                    //    new Vector3(2.017f, 2.017f, 2.017f)));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Vejiga"), 
+                    //    new Vector3(1.178f, 1.178f, 1.178f)));
                     break;
 
                 default:
@@ -165,33 +171,6 @@ namespace Puzzle
             }
 
             base.Draw(gameTime);
-        }
-
-        private void Move(BasicModel modelo)
-        {
-            Matrix worldTranslation = Matrix.Identity;
-
-            try
-            {
-                KeyboardState keyboardState = Keyboard.GetState();
-                if (keyboardState.IsKeyDown(Keys.Left))
-                    worldTranslation *= Matrix.CreateTranslation(-.01f, 0, 0);
-                if (keyboardState.IsKeyDown(Keys.Right))
-                    worldTranslation *= Matrix.CreateTranslation(.01f, 0, 0);
-                if (keyboardState.IsKeyDown(Keys.Up))
-                    worldTranslation *= Matrix.CreateTranslation(0, .01f, 0);
-                if (keyboardState.IsKeyDown(Keys.Down))
-                    worldTranslation *= Matrix.CreateTranslation(0, -.01f, 0);
-                if (keyboardState.IsKeyDown(Keys.W))
-                    worldTranslation *= Matrix.CreateTranslation(0, 0, 1f);
-                if (keyboardState.IsKeyDown(Keys.S))
-                    worldTranslation *= Matrix.CreateTranslation(0, 0, -1f);
-            }
-            catch
-            {
-            }
-
-            effect.World = worldTranslation;
         }
     }
 }

@@ -20,11 +20,24 @@ namespace Puzzle
         SpriteBatch spriteBatch;
 
         SpriteFont coordenadas;
+        SpriteFont rotacion;
+
+        String coord;
+        String rot;
+
+        public List<BasicModel> modelos;
 
         public FuenteManager(Game game)
             : base(game)
         {
             // TODO: Construct any child components here
+        }
+
+        public FuenteManager(Game game, List<BasicModel> modelos)
+            : base(game)
+        {
+            // TODO: Construct any child components here
+            this.modelos = modelos;
         }
         
         public override void Initialize()
@@ -40,6 +53,7 @@ namespace Puzzle
 
             //Fuentes
             coordenadas = Game.Content.Load<SpriteFont>(@"fonts\fuente");
+            rotacion = Game.Content.Load<SpriteFont>(@"fonts\fuente");
 
             base.LoadContent();
         }
@@ -47,6 +61,8 @@ namespace Puzzle
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            coord = modelos.First().posicionActual.ToString();
+            rot = modelos.First().rotacionActual.ToString();
 
             base.Update(gameTime);
         }
@@ -55,8 +71,13 @@ namespace Puzzle
         {
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
-            spriteBatch.DrawString(coordenadas, "Score: " + " ",
+            //Coordenadas
+            spriteBatch.DrawString(coordenadas, "Coordenadas: " + coord,
                 new Vector2(10, 10), Color.DarkBlue, 0, Vector2.Zero,
+                1, SpriteEffects.None, 1);
+            //Rotacion
+            spriteBatch.DrawString(coordenadas, "Rotacion: " + rot,
+                new Vector2(10, 25), Color.DarkBlue, 0, Vector2.Zero,
                 1, SpriteEffects.None, 1);
 
             spriteBatch.End();

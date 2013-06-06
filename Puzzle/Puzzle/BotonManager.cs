@@ -18,7 +18,7 @@ namespace Puzzle
 
         public List<BasicModel> modelos;
 
-        float moveSpeed = 0.3f;
+        float moveSpeed = .1f;
 
         //Botones
         Sprite botonRotar;
@@ -82,27 +82,27 @@ namespace Puzzle
                 if (keyboardState.IsKeyDown(Keys.Left))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldTranslation *= Matrix.CreateTranslation(-moveSpeed, 0, 0);
+                        bm.posicionActual += new Vector3(-moveSpeed, 0, 0);
                     }
                 if (keyboardState.IsKeyDown(Keys.Right))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldTranslation *= Matrix.CreateTranslation(moveSpeed, 0, 0);
+                        bm.posicionActual += new Vector3(moveSpeed, 0, 0);
                     }
                 if (keyboardState.IsKeyDown(Keys.Up))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldTranslation *= Matrix.CreateTranslation(0, moveSpeed, 0);
+                        bm.posicionActual += new Vector3(0, moveSpeed, 0);
                     }
                 if (keyboardState.IsKeyDown(Keys.Down))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldTranslation *= Matrix.CreateTranslation(0, -moveSpeed, 0);
+                        bm.posicionActual += new Vector3(0, -moveSpeed, 0);
                     }
                 if (keyboardState.IsKeyDown(Keys.W))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldRotation *= Matrix.CreateRotationX(MathHelper.PiOver4 / 60);
+                        bm.worldRotation *= Matrix.CreateRotationX(MathHelper.Pi / 4);
                     }
                 if (keyboardState.IsKeyDown(Keys.S))
                     foreach (BasicModel bm in modelos)
@@ -112,20 +112,17 @@ namespace Puzzle
                 if (keyboardState.IsKeyDown(Keys.X))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(45f));
-                        //bm.worldRotation *= Matrix.CreateFromYawPitchRoll(.1f, 0f, 0f);
+                        bm.RotacionActual += new Vector3( MathHelper.PiOver4, 0, 0);
                     }
                 if (keyboardState.IsKeyDown(Keys.Y))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(45f));
-                        //bm.worldRotation *= Matrix.CreateRotationY(MathHelper.PiOver4 / 30);
+                        bm.RotacionActual += new Vector3(0, MathHelper.PiOver4, 0);
                     }
                 if (keyboardState.IsKeyDown(Keys.Z))
                     foreach (BasicModel bm in modelos)
                     {
-                        bm.worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(45f));
-                        //bm.worldRotation *= Matrix.CreateRotationZ(MathHelper.PiOver4 / 30);
+                        bm.RotacionActual += new Vector3(0, 0, MathHelper.PiOver4);
                     }
 
             }
