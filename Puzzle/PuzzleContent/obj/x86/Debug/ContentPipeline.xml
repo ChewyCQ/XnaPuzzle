@@ -408,6 +408,15 @@
       <Output>obj\x86\Debug\Masculino\vejiga_0.xml</Output>
       <Time>2013-06-05T09:21:58.6411506-05:00</Time>
     </Item>
+    <Item>
+      <Source>Fonts\Fuente.spritefont</Source>
+      <Name>Fonts\Fuente</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Fonts\Fuente.xnb</Output>
+      <Time>2013-06-05T19:52:46.8845234-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

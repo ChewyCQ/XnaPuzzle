@@ -13,9 +13,11 @@ namespace Puzzle
         public Matrix worldTranslation = Matrix.Identity;
         public Matrix worldRotation = Matrix.Identity;
 
-        public float scaleX = 1;
-        public float scaleY = 1;
-        public float scaleZ = 1;
+        public Vector3 escala;
+
+        public Vector3 posicionCorrecta = new Vector3(0, 0, 0);
+        public Vector3 posicionInicial = new Vector3(0, 0, 0);
+        public Vector3 posicionActual = new Vector3(0, 0, 0);
 
         public List<BasicModel> modelos;
 
@@ -24,12 +26,10 @@ namespace Puzzle
             model = m;
         }
 
-        public BasicModel(Model m, float x, float y, float z)
+        public BasicModel(Model m, Vector3 escala)
         {
             model = m;
-            this.scaleX = x;
-            this.scaleY = y;
-            this.scaleZ = z;
+            this.escala = escala;
         }
 
         public BasicModel(Model m, float scale, Matrix rotation)
@@ -63,7 +63,7 @@ namespace Puzzle
 
         public virtual Matrix GetWorld()
         {
-            return Matrix.CreateScale(scaleX, scaleY, scaleZ) * worldRotation * worldTranslation;
+            return Matrix.CreateScale(escala) * worldRotation * worldTranslation;
         }
     }//Class
 }

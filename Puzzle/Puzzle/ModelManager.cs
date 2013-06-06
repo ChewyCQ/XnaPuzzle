@@ -65,46 +65,65 @@ namespace Puzzle
             {
                 case sexo.Masculino:
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_derecho"), 0.326f, 0.326f, 0.326f));//spaceship
+                        Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_derecho"), 
+                        new Vector3(0.326f,0.326f,0.326f)));//spaceship
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_Izquierdo"), 0.326f, 0.326f, 0.326f));
+                        Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_Izquierdo"), 
+                        new Vector3(0.326f, 0.326f, 0.326f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\epididiimio_lado_derecho"), 1.058f, 1.058f, 1.058f));
+                        Game.Content.Load<Model>(@"Masculino\epididiimio_lado_derecho"), 
+                        new Vector3(1.058f, 1.058f, 1.058f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\epididimio_lado_izquierdo"), 1.058f, 1.058f, 1.058f));
+                        Game.Content.Load<Model>(@"Masculino\epididimio_lado_izquierdo"), 
+                        new Vector3(1.058f, 1.058f, 1.058f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\prostata"), 1.820f, 1.820f, 1.820f));
+                        Game.Content.Load<Model>(@"Masculino\prostata"), 
+                        new Vector3(1.820f, 1.820f, 1.820f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\tejido_erectil"), 0.877f, 0.877f, 0.877f));
+                        Game.Content.Load<Model>(@"Masculino\tejido_erectil"), 
+                        new Vector3(0.877f, 0.877f, 0.877f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\testiculo_lado_derecho"), 1.058f, 1.058f, 1.058f));
+                        Game.Content.Load<Model>(@"Masculino\testiculo_lado_derecho"), 
+                        new Vector3(1.058f, 1.058f, 1.058f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\testiculos_lado_izquierdo"), 1.058f, 1.058f, 1.058f));
+                        Game.Content.Load<Model>(@"Masculino\testiculos_lado_izquierdo"), 
+                        new Vector3(1.058f, 1.058f, 1.058f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\uretra"), 0.995f, 0.995f, 0.995f));
+                        Game.Content.Load<Model>(@"Masculino\uretra"), 
+                        new Vector3(0.995f, 0.995f, 0.995f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\vejiga"), 1.893f, 1.893f, 1.893f));
+                        Game.Content.Load<Model>(@"Masculino\vejiga"), 
+                        new Vector3(1.893f, 1.893f, 1.893f)));
                     break;
 
                 case sexo.Femenino:
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Cuerpo"), 7.2f, 7.2f, 7.2f));
+                        Game.Content.Load<Model>(@"Femenino\Cuerpo"), 
+                        new Vector3(7.2f, 7.2f, 7.2f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Ovario derecho"), 2.61f, 1.92f, 1.959f));
+                        Game.Content.Load<Model>(@"Femenino\Ovario derecho"), 
+                        new Vector3(2.61f, 1.92f, 1.959f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"), 2.610f, 1.920f, 1.959f));
+                        Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"), 
+                        new Vector3(2.610f, 1.920f, 1.959f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha"), 0.731f, 0.892f, 0.963f));
+                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha"), 
+                        new Vector3(0.731f, 0.892f, 0.963f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda"), 0.963f, 0.892f, 0.963f));
+                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda"), 
+                        new Vector3(0.963f, 0.892f, 0.963f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Uretra"), 5.051f, 6.782f, 5.316f));
+                        Game.Content.Load<Model>(@"Femenino\Uretra"), 
+                        new Vector3(5.051f, 6.782f, 5.316f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Útero"), 5.028f, 4.260f, 4.268f));
+                        Game.Content.Load<Model>(@"Femenino\Útero"), 
+                        new Vector3(5.028f, 4.260f, 4.268f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Vagina"), 2.017f, 2.017f, 2.017f));
+                        Game.Content.Load<Model>(@"Femenino\Vagina"), 
+                        new Vector3(2.017f, 2.017f, 2.017f)));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Vejiga"), 1.178f, 1.178f, 1.178f));
+                        Game.Content.Load<Model>(@"Femenino\Vejiga"), 
+                        new Vector3(1.178f, 1.178f, 1.178f)));
                     break;
 
                 default:
@@ -167,7 +186,6 @@ namespace Puzzle
                     worldTranslation *= Matrix.CreateTranslation(0, 0, 1f);
                 if (keyboardState.IsKeyDown(Keys.S))
                     worldTranslation *= Matrix.CreateTranslation(0, 0, -1f);
-
             }
             catch
             {

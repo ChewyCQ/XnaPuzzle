@@ -20,8 +20,8 @@ namespace Puzzle
         SpriteBatch spriteBatch;
 
         //Screen sizes
-        int screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-        int screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+        public int screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+        public int screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
         enum estados{ seleccion, juego, fin};
         estados estado = estados.seleccion;
@@ -30,6 +30,7 @@ namespace Puzzle
         SpriteManager spriteManager;
         ModelManager modelManager;
         BotonManager botonManager;
+        FuenteManager fuenteManager;
 
         public Camera camera { get; protected set; }
 
@@ -60,15 +61,13 @@ namespace Puzzle
         {
             // TODO: Add your initialization logic here
 
-            //Modelos 3D
-            //modelManager = new ModelManager(this);
-            //Components.Add(modelManager);
-            //modelManager.Enabled = false;
-            //modelManager.Visible = false;
-
             //Sprites de Seleccion
             spriteManager = new SpriteManager(this);
             Components.Add(spriteManager);
+
+            //Fuentes
+            fuenteManager = new FuenteManager(this);
+            Components.Add(fuenteManager);
 
             //Mouse/cursor visible
             this.IsMouseVisible = true;
@@ -86,6 +85,8 @@ namespace Puzzle
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            //Camera
             camera = new Camera(this, new Vector3(0, 0, 50),
                 Vector3.Zero, Vector3.Up);
             Components.Add(camera);

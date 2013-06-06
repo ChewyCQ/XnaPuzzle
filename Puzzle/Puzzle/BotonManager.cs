@@ -12,9 +12,6 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Puzzle
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
     public class BotonManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
         SpriteBatch spriteBatch;
@@ -33,10 +30,6 @@ namespace Puzzle
             this.modelos = modelos;
         }
 
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
         public override void Initialize()
         {
             // TODO: Add your initialization code here
@@ -63,10 +56,6 @@ namespace Puzzle
             base.LoadContent();
         }
 
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
             MouseState mouseState = Mouse.GetState();
