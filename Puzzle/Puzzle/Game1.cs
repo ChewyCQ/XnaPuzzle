@@ -139,8 +139,8 @@ namespace Puzzle
                             botonManager = new BotonManager(this, modelManager.models);
                             Components.Add(botonManager);
                             //Fuentes
-                            fuenteManager = new FuenteManager(this, modelManager.models);
-                            Components.Add(fuenteManager);
+                            //fuenteManager = new FuenteManager(this, modelManager.models);
+                            //Components.Add(fuenteManager);
                             estado = estados.juego;
                         }
                         else
@@ -152,8 +152,8 @@ namespace Puzzle
                             spriteManager.Visible = false;
                             botonManager = new BotonManager(this, modelManager.models);
                             Components.Add(botonManager);
-                            fuenteManager = new FuenteManager(this, modelManager.models);
-                            Components.Add(fuenteManager);
+                            //fuenteManager = new FuenteManager(this, modelManager.models);
+                            //Components.Add(fuenteManager);
                             estado = estados.juego;
                         }
                     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Puzzle
 {
@@ -13,6 +14,10 @@ namespace Puzzle
         public Matrix worldTranslation = Matrix.Identity;
         public Matrix worldRotation = Matrix.Identity;
 
+        float moveSpeed = 1f;
+
+        public String nombre;
+
         //Escala
         public Vector3 escala;
 
@@ -20,30 +25,6 @@ namespace Puzzle
         public Vector3 rotacionCorrecta = new Vector3(0,0,0);
         public Vector3 rotacionInicial = new Vector3(0, 0, 0);
         public Vector3 rotacionActual = new Vector3(0,0,0);
-    
-        public Vector3 RotacionActual
-        {
-            get
-            {
-                return rotacionActual;
-            }
-            set
-            {
-                if (rotacionActual.X > 2 * MathHelper.Pi)
-                {
-                    rotacionActual.X -= 2 * MathHelper.Pi;
-                }
-                if (rotacionActual.Y > 360)
-                {
-                    rotacionActual.Y -= 360;
-                }
-                if (rotacionActual.Z > 360)
-                {
-                    rotacionActual.Z -= 360;
-                } 
-                rotacionActual = value;
-            }
-        }
 
         //Coordenadas
         public Vector3 posicionCorrecta = new Vector3(0, 0, 0);
@@ -64,20 +45,26 @@ namespace Puzzle
             rotacionActual = new Vector3(0,0,0);
         }
 
-        public BasicModel(Model m, float scale, Matrix rotation)
+        public BasicModel(Model m, Vector3 scale, Vector3 rotacion, String nombre)
         {
             model = m;
-            worldRotation *= rotation;
+            this.escala = scale;
+            this.rotacionInicial = rotacion;
+            this.rotacionActual = rotacion;
+            worldRotation *= Matrix.CreateRotationX(rotacionActual.X);
+            worldRotation *= Matrix.CreateRotationY(rotacionActual.Y);
+            worldRotation *= Matrix.CreateRotationZ(rotacionActual.Z);
+            this.nombre = nombre;
         }
 
         public virtual void Update()
         {
-            if (rotacionActual.X > 360)
-                rotacionActual.X -= 360;
-            if (rotacionActual.Y > 360)
-                rotacionActual.Y -= 360;
-            if (rotacionActual.Z > 360)
-                rotacionActual.Z -= 360;
+            if (rotacionActual.X > MathHelper.ToRadians(360))
+                rotacionActual.X -= MathHelper.ToRadians(360);
+            if (rotacionActual.Y > MathHelper.ToRadians(360))
+                rotacionActual.Y -= MathHelper.ToRadians(360);
+            if (rotacionActual.Z > MathHelper.ToRadians(360))
+                rotacionActual.Z -= MathHelper.ToRadians(360);
         }
 
         public void Draw(Camera camera)
@@ -100,11 +87,20 @@ namespace Puzzle
 
         public virtual Matrix GetWorld()
         {
+            //worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X));
+            //worldRotation *= Matrix.CreateRotationY(rotacionActual.Y);
+            //worldRotation *= Matrix.CreateRotationZ(rotacionActual.Z);
+
             //Escala * Rotacion * Posicion
             return Matrix.CreateScale(escala) * 
-                Matrix.CreateFromYawPitchRoll
-                (MathHelper.ToRadians(rotacionActual.X), MathHelper.ToRadians(rotacionActual.Y), MathHelper.ToRadians(rotacionActual.Z)) * 
-                Matrix.CreateTranslation(posicionActual);//worldTranslation
+                worldRotation * 
+                Matrix.CreateTranslation(posicionActual);
+            /*
+             * Matrix.CreateFromYawPitchRoll
+                (MathHelper.ToRadians(rotacionActual.X), 
+                MathHelper.ToRadians(rotacionActual.Y), 
+                MathHelper.ToRadians(rotacionActual.Z))
+             */
         }
     }//Class
-}
+}//NAMESPACE

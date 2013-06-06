@@ -16,7 +16,7 @@ namespace Puzzle
     {
         SpriteBatch spriteBatch;
 
-        public List<BasicModel> modelos;
+        //public List<BasicModel> modelos;
 
         float moveSpeed = .1f;
 
@@ -27,7 +27,7 @@ namespace Puzzle
             : base(game)
         {
             // TODO: Construct any child components here
-            this.modelos = modelos;
+            //this.modelos = modelos;
         }
 
         public override void Initialize()
@@ -67,67 +67,11 @@ namespace Puzzle
             {
                 if (mouseState.X > botonRotar.GetPosition.X)
                 {
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.worldTranslation *= Matrix.CreateTranslation(0, 0, -1f); ;// CreateTranslation(0, 0, -1f);
-                    }
+                    //foreach (BasicModel bm in modelos)
+                    //{
+                        
+                    //}
                 }
-            }
-
-            //Mover con teclas
-            Matrix worldTranslation = Matrix.Identity;
-            try
-            {
-                KeyboardState keyboardState = Keyboard.GetState();
-                if (keyboardState.IsKeyDown(Keys.Left))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.posicionActual += new Vector3(-moveSpeed, 0, 0);
-                    }
-                if (keyboardState.IsKeyDown(Keys.Right))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.posicionActual += new Vector3(moveSpeed, 0, 0);
-                    }
-                if (keyboardState.IsKeyDown(Keys.Up))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.posicionActual += new Vector3(0, moveSpeed, 0);
-                    }
-                if (keyboardState.IsKeyDown(Keys.Down))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.posicionActual += new Vector3(0, -moveSpeed, 0);
-                    }
-                if (keyboardState.IsKeyDown(Keys.W))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.worldRotation *= Matrix.CreateRotationX(MathHelper.Pi / 4);
-                    }
-                if (keyboardState.IsKeyDown(Keys.S))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.worldRotation *= Matrix.CreateRotationX(-MathHelper.PiOver4);
-                    }
-                if (keyboardState.IsKeyDown(Keys.X))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.RotacionActual += new Vector3( MathHelper.PiOver4, 0, 0);
-                    }
-                if (keyboardState.IsKeyDown(Keys.Y))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.RotacionActual += new Vector3(0, MathHelper.PiOver4, 0);
-                    }
-                if (keyboardState.IsKeyDown(Keys.Z))
-                    foreach (BasicModel bm in modelos)
-                    {
-                        bm.RotacionActual += new Vector3(0, 0, MathHelper.PiOver4);
-                    }
-
-            }
-            catch
-            {
             }
 
             base.Update(gameTime);

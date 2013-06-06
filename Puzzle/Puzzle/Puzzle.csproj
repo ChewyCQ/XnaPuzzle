@@ -118,7 +118,6 @@
     <Compile Include="SpinningEnemy.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="SpriteManager.cs" />
-    <Compile Include="Texto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -24,6 +24,9 @@ namespace Puzzle
 
         String coord;
         String rot;
+        String nombre;
+
+        public int modeloSeleccionado = 0;
 
         public List<BasicModel> modelos;
 
@@ -61,8 +64,9 @@ namespace Puzzle
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            coord = modelos.First().posicionActual.ToString();
-            rot = modelos.First().rotacionActual.ToString();
+            coord = modelos.ElementAt(modeloSeleccionado).posicionActual.ToString();
+            rot = modelos.ElementAt(modeloSeleccionado).rotacionActual.ToString();
+            nombre = modelos.ElementAt(modeloSeleccionado).nombre;
 
             base.Update(gameTime);
         }
@@ -78,6 +82,11 @@ namespace Puzzle
             //Rotacion
             spriteBatch.DrawString(coordenadas, "Rotacion: " + rot,
                 new Vector2(10, 25), Color.DarkBlue, 0, Vector2.Zero,
+                1, SpriteEffects.None, 1);
+
+            //Rotacion
+            spriteBatch.DrawString(coordenadas, nombre,
+                new Vector2(10, 40), Color.DarkBlue, 0, Vector2.Zero,
                 1, SpriteEffects.None, 1);
 
             spriteBatch.End();
