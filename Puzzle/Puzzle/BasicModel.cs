@@ -14,8 +14,6 @@ namespace Puzzle
         public Matrix worldTranslation = Matrix.Identity;
         public Matrix worldRotation = Matrix.Identity;
 
-        float moveSpeed = 1f;
-
         public String nombre;
 
         //Escala
@@ -27,9 +25,9 @@ namespace Puzzle
         public Vector3 rotacionActual = new Vector3(0,0,0);
 
         //Coordenadas
-        public Vector3 posicionCorrecta = new Vector3(0, 0, 0);
-        public Vector3 posicionInicial = new Vector3(0, 0, 0);
-        public Vector3 posicionActual = new Vector3(0, 0, 0);
+        public Vector3 posicionCorrecta;
+        public Vector3 posicionInicial;
+        public Vector3 posicionActual;
 
         public List<BasicModel> modelos;
 
@@ -45,26 +43,43 @@ namespace Puzzle
             rotacionActual = new Vector3(0,0,0);
         }
 
-        public BasicModel(Model m, Vector3 scale, Vector3 rotacion, String nombre)
+        public BasicModel(Model m, Vector3 scale, Vector3 rotacion, Vector3 posicion, String nombre)
         {
             model = m;
             this.escala = scale;
             this.rotacionInicial = rotacion;
-            this.rotacionActual = rotacion;
-            worldRotation *= Matrix.CreateRotationX(rotacionActual.X);
-            worldRotation *= Matrix.CreateRotationY(rotacionActual.Y);
-            worldRotation *= Matrix.CreateRotationZ(rotacionActual.Z);
+            this.posicionInicial = posicion;
+            this.posicionActual = posicion;
+
+            rotacionActual += new Vector3(MathHelper.ToRadians(rotacion.X),
+                MathHelper.ToRadians(rotacion.Y), MathHelper.ToRadians(rotacion.Z));
+
+            worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion.X));
+            worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion.Y));
+            worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion.Z));
+
+            //worldRotation *= Matrix.CreateRotationX(rotacionActual.X);
+            //worldRotation *= Matrix.CreateRotationY(rotacionActual.Y);
+            //worldRotation *= Matrix.CreateRotationZ(rotacionActual.Z);
             this.nombre = nombre;
         }
 
         public virtual void Update()
         {
-            if (rotacionActual.X > MathHelper.ToRadians(360))
+            //Si se pasa de 360
+            if (rotacionActual.X >= MathHelper.ToRadians(360))
                 rotacionActual.X -= MathHelper.ToRadians(360);
-            if (rotacionActual.Y > MathHelper.ToRadians(360))
+            if (rotacionActual.Y >= MathHelper.ToRadians(360))
                 rotacionActual.Y -= MathHelper.ToRadians(360);
-            if (rotacionActual.Z > MathHelper.ToRadians(360))
+            if (rotacionActual.Z >= MathHelper.ToRadians(360))
                 rotacionActual.Z -= MathHelper.ToRadians(360);
+            //Si es menor a 0
+            if (rotacionActual.X < MathHelper.ToRadians(0))
+                rotacionActual.X += MathHelper.ToRadians(360);
+            if (rotacionActual.Y < MathHelper.ToRadians(0))
+                rotacionActual.Y += MathHelper.ToRadians(360);
+            if (rotacionActual.Z < MathHelper.ToRadians(0))
+                rotacionActual.Z += MathHelper.ToRadians(360);
         }
 
         public void Draw(Camera camera)
@@ -87,20 +102,10 @@ namespace Puzzle
 
         public virtual Matrix GetWorld()
         {
-            //worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X));
-            //worldRotation *= Matrix.CreateRotationY(rotacionActual.Y);
-            //worldRotation *= Matrix.CreateRotationZ(rotacionActual.Z);
-
             //Escala * Rotacion * Posicion
             return Matrix.CreateScale(escala) * 
                 worldRotation * 
                 Matrix.CreateTranslation(posicionActual);
-            /*
-             * Matrix.CreateFromYawPitchRoll
-                (MathHelper.ToRadians(rotacionActual.X), 
-                MathHelper.ToRadians(rotacionActual.Y), 
-                MathHelper.ToRadians(rotacionActual.Z))
-             */
         }
     }//Class
 }//NAMESPACE

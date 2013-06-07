@@ -30,7 +30,6 @@ namespace Puzzle
         SpriteManager spriteManager;
         ModelManager modelManager;
         BotonManager botonManager;
-        FuenteManager fuenteManager;
 
         public Camera camera { get; protected set; }
 
@@ -38,6 +37,8 @@ namespace Puzzle
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            
 
             graphics.PreferredBackBufferHeight = screenHeight;//768
             graphics.PreferredBackBufferWidth = screenWidth;//1366
@@ -49,6 +50,10 @@ namespace Puzzle
             // Pantalla completa
             if (!graphics.IsFullScreen)
                 graphics.ToggleFullScreen();
+
+            //Velocidad del juego, 50 = 20FPS
+            //16.6666667 milliseconds = 60FPS
+            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 100);
         }
 
         /// <summary>
