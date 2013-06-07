@@ -26,9 +26,12 @@ namespace Puzzle
 
         int modeloSeleccionado = 0;
 
-        float moveSpeed = 1;
-        float rotacion = 5;
-        float escala = 1.75f;
+        int timeSinceLastFrame = 0;
+        const int millisecondsPerFrame = 50000;
+
+        float moveSpeed = .5f;
+        float rotacion = 2.5f;
+        float escala = 0.875f;
         FuenteManager fuenteManager;
 
         public ModelManager(Game game, sexo sex)
@@ -36,6 +39,7 @@ namespace Puzzle
         {
             // TODO: Construct any child components here
             genero = sex;
+            timeSinceLastFrame = 0;
         }
 
         /// <summary>
@@ -135,21 +139,21 @@ namespace Puzzle
                 case sexo.Femenino:
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Cuerpo"),
-                        new Vector3(7.2f, 7.2f, 7.2f) * escala,
+                        new Vector3(7.2f, 7.2f, 7.2f) * escala * 2,
                         Vector3.Zero,
                         new Vector3(0,-13f,0),
                         "Cuerpo"));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Vagina"),
-                        new Vector3(2.017f, 2.017f, 1.544f) * escala,
-                        Vector3.Zero,
-                        new Vector3(0, 0, 0),
-                        "Vagina"));
+                    //models.Add(new BasicModel(
+                    //    Game.Content.Load<Model>(@"Femenino\Vagina"),
+                    //    new Vector3(2.017f, 2.017f, 1.544f) * escala,
+                    //    Vector3.Zero,
+                    //    new Vector3(0, 0, 0),
+                        //"Vagina"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Útero"),
                         new Vector3(5.028f, 4.260f, 4.268f) * escala,
                         new Vector3(280f, 85f, 5f),
-                        new Vector3(0, 0, 0),
+                        new Vector3(0, 3f, 0),
                         "Utero"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Ovario derecho"),
@@ -172,8 +176,8 @@ namespace Puzzle
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda"),
                         new Vector3(0.963f, 0.892f, 0.963f) * escala,
-                        Vector3.Zero,
-                        new Vector3(0, 0, 0),
+                        new Vector3(130f, 197.5f, 232.5f),
+                        new Vector3(-2.5f, 6.5f, -.5f),
                         "Trompa de Falopio Izquierda"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Uretra"),
@@ -217,13 +221,20 @@ namespace Puzzle
                 models[i].Update();
             }
 
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > millisecondsPerFrame)
+            {
+                timeSinceLastFrame -= millisecondsPerFrame;
+                manipularModelo(seleccionarModelo());
+            }
+
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
             //Activa el buffer en distancia (Z)
-            //GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
             // Loop through and draw each model
             foreach (BasicModel bm in models)
@@ -285,11 +296,11 @@ namespace Puzzle
                 {
                     modelo.posicionActual += new Vector3(0, -moveSpeed, 0);
                 }
-                if (keyboardState.IsKeyDown(Keys.W))
+                if (keyboardState.IsKeyDown(Keys.I))
                 {
                     modelo.posicionActual += new Vector3(0, 0, moveSpeed);
                 }
-                if (keyboardState.IsKeyDown(Keys.S))
+                if (keyboardState.IsKeyDown(Keys.K))
                 {
                     modelo.posicionActual += new Vector3(0, 0, -moveSpeed);
                 }

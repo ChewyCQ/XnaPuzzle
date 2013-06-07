@@ -38,8 +38,6 @@ namespace Puzzle
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            
-
             graphics.PreferredBackBufferHeight = screenHeight;//768
             graphics.PreferredBackBufferWidth = screenWidth;//1366
 
@@ -53,7 +51,7 @@ namespace Puzzle
 
             //Velocidad del juego, 50 = 20FPS
             //16.6666667 milliseconds = 60FPS
-            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 100);
+            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 50);
         }
 
         /// <summary>
@@ -69,8 +67,6 @@ namespace Puzzle
             //Sprites de Seleccion
             spriteManager = new SpriteManager(this);
             Components.Add(spriteManager);
-
-            
 
             //Mouse/cursor visible
             this.IsMouseVisible = true;
@@ -123,7 +119,6 @@ namespace Puzzle
                 KeyboardState keyboardState = Keyboard.GetState();
                 if (keyboardState.IsKeyDown(Keys.Escape))
                     this.Exit();
-                
             }
             catch
             {
@@ -132,34 +127,26 @@ namespace Puzzle
             switch (estado)
             {
                 case estados.seleccion:
+                    try
+                    {
+                        KeyboardState keyboardState = Keyboard.GetState();
+                        if (keyboardState.IsKeyDown(Keys.Left))
+                            masculinoSeleccionado();
+                        if (keyboardState.IsKeyDown(Keys.Right))
+                            femeninooSeleccionado();
+                    }
+                    catch
+                    {
+                    }
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
                         if (mouseState.X > (screenWidth / 2))
                         {
-                            //Femenino seleccionado
-                            modelManager = new ModelManager(this, ModelManager.sexo.Femenino);
-                            Components.Add(modelManager);
-                            spriteManager.Enabled = false;
-                            spriteManager.Visible = false;
-                            botonManager = new BotonManager(this, modelManager.models);
-                            Components.Add(botonManager);
-                            //Fuentes
-                            //fuenteManager = new FuenteManager(this, modelManager.models);
-                            //Components.Add(fuenteManager);
-                            estado = estados.juego;
+                            //femeninooSeleccionado();
                         }
                         else
                         {
-                            //Masculino seleccionado
-                            modelManager = new ModelManager(this, ModelManager.sexo.Masculino);
-                            Components.Add(modelManager);
-                            spriteManager.Enabled = false;
-                            spriteManager.Visible = false;
-                            botonManager = new BotonManager(this, modelManager.models);
-                            Components.Add(botonManager);
-                            //fuenteManager = new FuenteManager(this, modelManager.models);
-                            //Components.Add(fuenteManager);
-                            estado = estados.juego;
+                            //masculinoSeleccionado();
                         }
                     }
                     break;
@@ -183,6 +170,28 @@ namespace Puzzle
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+        }
+
+        void masculinoSeleccionado() 
+        {
+            modelManager = new ModelManager(this, ModelManager.sexo.Masculino);
+            Components.Add(modelManager);
+            spriteManager.Enabled = false;
+            spriteManager.Visible = false;
+            botonManager = new BotonManager(this, modelManager.models);
+            Components.Add(botonManager);
+            estado = estados.juego;
+        }
+
+        void femeninooSeleccionado() 
+        {
+            modelManager = new ModelManager(this, ModelManager.sexo.Femenino);
+            Components.Add(modelManager);
+            spriteManager.Enabled = false;
+            spriteManager.Visible = false;
+            botonManager = new BotonManager(this, modelManager.models);
+            Components.Add(botonManager);
+            estado = estados.juego;
         }
     }
 }

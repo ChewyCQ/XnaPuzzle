@@ -113,10 +113,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Vagina.xnb</Output>
-      <Time>2013-06-05T09:19:31.6613851-05:00</Time>
+      <Time>2013-06-07T02:49:24.185689-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Femenino\Vagina_0.xml</Key>
-        <Value>2013-06-06T09:48:08.1886642-05:00</Value>
+        <Value>2013-06-07T02:49:30.1000273-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -331,7 +331,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Femenino\Vagina_0.xml</Output>
-      <Time>2013-06-05T09:19:31.6613851-05:00</Time>
+      <Time>2013-06-07T02:49:24.185689-05:00</Time>
     </Item>
     <Item>
       <Source>Femenino\Vejiga.fbx</Source>
