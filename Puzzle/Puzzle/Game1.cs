@@ -51,7 +51,7 @@ namespace Puzzle
 
             //Velocidad del juego, 50 = 20FPS
             //16.6666667 milliseconds = 60FPS
-            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 50);
+            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 60);
         }
 
         /// <summary>

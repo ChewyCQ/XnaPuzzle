@@ -141,14 +141,14 @@ namespace Puzzle
                         Game.Content.Load<Model>(@"Femenino\Cuerpo"),
                         new Vector3(7.2f, 7.2f, 7.2f) * escala * 2,
                         Vector3.Zero,
-                        new Vector3(0,-13f,0),
+                        new Vector3(0, -13f, 0),
                         "Cuerpo"));
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Femenino\Vagina"),
-                    //    new Vector3(2.017f, 2.017f, 1.544f) * escala,
-                    //    Vector3.Zero,
-                    //    new Vector3(0, 0, 0),
-                        //"Vagina"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Vagina2"),
+                        new Vector3(1f, 1f, 0.766f) * escala,
+                        new Vector3(267.5f, 70f, 0f),
+                        new Vector3(0.75f, -2f, -3f),
+                        "Vagina"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Útero"),
                         new Vector3(5.028f, 4.260f, 4.268f) * escala,
@@ -180,17 +180,17 @@ namespace Puzzle
                         new Vector3(-2.5f, 6.5f, -.5f),
                         "Trompa de Falopio Izquierda"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Uretra"),
-                        new Vector3(5.051f, 6.782f, 5.316f) * escala,
-                        Vector3.Zero,
-                        new Vector3(0, 0, 0),
+                        Game.Content.Load<Model>(@"Pruebas\Uretra2"),
+                        new Vector3(5.051f, 6.782f, 5.316f) * escala,//escala
+                        new Vector3(352.5f, 0f, 92.5f),//rotacion
+                        new Vector3(0f, -5.5f, 3.5f),//posicion
                         "Uretra"));
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Femenino\Vejiga"),
-                    //    new Vector3(1.178f, 1.178f, 1.178f) * escala,
-                    //    Vector3.Zero,
-                    //    new Vector3(0,0,0),
-                    //    "Vejiga"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Vejiga"),
+                        new Vector3(1.178f, 1.178f, 1.178f) * escala * 2,
+                        new Vector3(270, 0, 0),
+                        new Vector3(-1f, -3f, 3.5f),
+                        "Vejiga"));
                     
                     break;
 
