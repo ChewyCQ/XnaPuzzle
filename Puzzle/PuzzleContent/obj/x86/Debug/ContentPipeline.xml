@@ -444,10 +444,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Uretra2.xnb</Output>
-      <Time>2013-06-08T01:23:48.467477-05:00</Time>
+      <Time>2013-06-09T03:01:54.3655637-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Femenino\Uretra2_0.xml</Key>
-        <Value>2013-06-08T20:18:30.6671913-05:00</Value>
+        <Value>2013-06-09T03:02:17.0478611-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -455,7 +455,47 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Femenino\Uretra2_0.xml</Output>
-      <Time>2013-06-08T01:23:48.467477-05:00</Time>
+      <Time>2013-06-09T03:01:54.3655637-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Derecha2.fbx</Source>
+      <Name>Femenino\Trompa de Falopio Derecha2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Derecha2.xnb</Output>
+      <Time>2013-06-09T03:54:15.1772079-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Femenino\Trompa de Falopio Derecha2_0.xml</Key>
+        <Value>2013-06-09T03:54:18.6114043-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Derecha2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Femenino\Trompa de Falopio Derecha2_0.xml</Output>
+      <Time>2013-06-09T03:54:15.1772079-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Izquierda2.fbx</Source>
+      <Name>Femenino\Trompa de Falopio Izquierda2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Izquierda2.xnb</Output>
+      <Time>2013-06-09T04:17:33.4841864-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Femenino\Trompa de Falopio Izquierda2_0.xml</Key>
+        <Value>2013-06-09T04:17:36.5253604-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Izquierda2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Femenino\Trompa de Falopio Izquierda2_0.xml</Output>
+      <Time>2013-06-09T04:17:33.4841864-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

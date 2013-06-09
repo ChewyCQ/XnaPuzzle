@@ -183,8 +183,8 @@ namespace Puzzle
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Ovario derecho"),
                         new Vector3(2.61f, 1.92f, 1.959f) * escala,
-                        Vector3.Zero,
-                        new Vector3(0, 0, 0),
+                        new Vector3(0f, 90f, 0f),
+                        new Vector3(6.75f, 7.75f, 5.25f),
                         "Ovario derecho"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"),
@@ -193,16 +193,16 @@ namespace Puzzle
                         new Vector3(0, 0, 0),
                         "Ovario izquierdo"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha"),
-                        new Vector3(0.731f, 0.892f, 0.963f) * escala,
-                        Vector3.Zero,
-                        new Vector3(0, 0, 0),
+                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha2"),
+                        new Vector3(0.691f, 0.640f, 0.691f) * escala,
+                        new Vector3(310f, 10f, 0f),
+                        new Vector3(4.75f, 6.75f, 8.5f),
                         "Trompa de Falopio Derecha"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda"),
-                        new Vector3(0.963f, 0.892f, 0.963f) * escala,
-                        new Vector3(130f, 197.5f, 232.5f),
-                        new Vector3(-2.5f, 6.5f, -.5f),
+                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda2"),
+                        new Vector3(0.691f, 0.640f, 0.691f) * escala,
+                        new Vector3(222.5f, 195f, 147.5f),
+                        new Vector3(-5f, 7.25f, 8.75f),
                         "Trompa de Falopio Izquierda"));
                     break;
 

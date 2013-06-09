@@ -23,3 +23,5 @@ Content\Femenino\Vagina2.xnb
 Content\Masculino\CuerpoCompleto.xnb
 Content\Masculino\parte_del_pene.xnb
 Content\Femenino\Uretra2.xnb
+Content\Femenino\Trompa de Falopio Derecha2.xnb
+Content\Femenino\Trompa de Falopio Izquierda2.xnb
