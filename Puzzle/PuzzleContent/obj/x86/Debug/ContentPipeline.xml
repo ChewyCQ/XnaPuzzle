@@ -484,10 +484,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Izquierda2.xnb</Output>
-      <Time>2013-06-09T04:17:33.4841864-05:00</Time>
+      <Time>2013-06-09T04:34:27.7682002-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Femenino\Trompa de Falopio Izquierda2_0.xml</Key>
-        <Value>2013-06-09T04:17:36.5253604-05:00</Value>
+        <Value>2013-06-09T04:34:32.2474564-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -495,7 +495,27 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Femenino\Trompa de Falopio Izquierda2_0.xml</Output>
-      <Time>2013-06-09T04:17:33.4841864-05:00</Time>
+      <Time>2013-06-09T04:34:27.7682002-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\parte_del_pene2.fbx</Source>
+      <Name>Masculino\parte_del_pene2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\parte_del_pene2.xnb</Output>
+      <Time>2013-06-09T18:02:33.5065547-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Masculino\parte_del_pene2_0.xml</Key>
+        <Value>2013-06-09T18:02:51.6145905-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\parte_del_pene2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Masculino\parte_del_pene2_0.xml</Output>
+      <Time>2013-06-09T18:02:33.5065547-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -503,10 +523,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

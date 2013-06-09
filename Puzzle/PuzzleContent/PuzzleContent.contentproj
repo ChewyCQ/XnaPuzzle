@@ -76,16 +76,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Femenino\Trompa de Falopio Derecha.fbx">
-      <Name>Trompa de Falopio Derecha</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Femenino\Trompa de Falopio Izquierda.fbx">
-      <Name>Trompa de Falopio Izquierda</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Femenino\Vejiga.fbx">
       <Name>Vejiga</Name>
       <Importer>FbxImporter</Importer>
@@ -176,11 +166,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Masculino\parte_del_pene.fbx">
-      <Name>parte_del_pene</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pruebas\" />
@@ -195,6 +180,13 @@
   <ItemGroup>
     <Compile Include="Femenino\Trompa de Falopio Derecha2.fbx">
       <Name>Trompa de Falopio Derecha2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masculino\parte_del_pene2.fbx">
+      <Name>parte_del_pene2</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

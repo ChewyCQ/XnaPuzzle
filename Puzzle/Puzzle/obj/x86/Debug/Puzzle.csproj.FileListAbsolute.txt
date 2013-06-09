@@ -31,3 +31,4 @@ C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x8
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Uretra2.xnb
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Derecha2.xnb
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Izquierda2.xnb
+C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\parte_del_pene2.xnb
