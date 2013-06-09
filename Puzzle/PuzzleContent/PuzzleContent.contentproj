@@ -86,11 +86,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Femenino\Uretra.fbx">
-      <Name>Uretra</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Femenino\Vejiga.fbx">
       <Name>Vejiga</Name>
       <Importer>FbxImporter</Importer>
@@ -162,13 +157,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Femenino\Vagina.fbx">
-      <Name>Vagina</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Femenino\Vagina2.fbx">
       <Name>Vagina2</Name>
       <Importer>FbxImporter</Importer>
@@ -176,11 +164,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pruebas\Uretra2.fbx">
+    <Compile Include="Femenino\Uretra2.fbx">
       <Name>Uretra2</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masculino\CuerpoCompleto.fbx">
+      <Name>CuerpoCompleto</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Masculino\parte_del_pene.fbx">
+      <Name>parte_del_pene</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pruebas\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

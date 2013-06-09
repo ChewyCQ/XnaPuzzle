@@ -89,6 +89,7 @@ namespace Puzzle
                 UpdateViewMatrix();
             }
 
+            //float speed = 0.5f;
             Vector3 moveVector = new Vector3(0, 0, 0);
             try { 
                 KeyboardState keyState = Keyboard.GetState();
