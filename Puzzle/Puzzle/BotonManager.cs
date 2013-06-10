@@ -18,8 +18,6 @@ namespace Puzzle
 
         //public List<BasicModel> modelos;
 
-        float moveSpeed = .1f;
-
         //Botones
         Sprite botonRotar;
 
@@ -46,12 +44,13 @@ namespace Puzzle
             int ScreenHeight = Game.Window.ClientBounds.Height;
 
             //Texturas
-            Texture2D rotarTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/redo");
+            Texture2D leftTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/left");
 
             //Cargar Sprites
-            botonRotar = new Sprite (rotarTextura,
-                new Vector2((ScreenWidht) - (rotarTextura.Width),
-                    (ScreenHeight) - (rotarTextura.Height)));  //Posicion
+            botonRotar = new Sprite(Game.Content.Load<Texture2D>(@"Imagenes/Botones/left"),
+                new Vector2((ScreenWidht) - (leftTextura.Width*.15f),
+                    (ScreenHeight) - (leftTextura.Height * .15f)),
+                    0.15f);
 
             base.LoadContent();
         }
@@ -67,6 +66,7 @@ namespace Puzzle
             {
                 if (mouseState.X > botonRotar.GetPosition.X)
                 {
+                    Game.Exit();
                     //foreach (BasicModel bm in modelos)
                     //{
                         

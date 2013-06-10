@@ -109,7 +109,7 @@
   <ItemGroup>
     <Compile Include="BasicModel.cs" />
     <Compile Include="BotonManager.cs" />
-    <Compile Include="CamaraMovible.cs" />
+    <Compile Include="CamaraLimitada.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="FuenteManager.cs" />
     <Compile Include="ModelManager.cs" />

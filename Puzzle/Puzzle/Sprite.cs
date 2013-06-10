@@ -8,9 +8,7 @@ namespace Puzzle
     {
         Texture2D textureImage;
         protected Point frameSize;
-        Point currentFrame;
         Point sheetSize;
-        protected Vector2 speed;
         protected Vector2 position = Vector2.Zero;
         public string collisionCueName { get; private set; }
         protected float scale = 1;
@@ -22,6 +20,13 @@ namespace Puzzle
             this.position = position;
         }
 
+        public Sprite(Texture2D textureImage, Vector2 position, float scale)
+        {
+            this.textureImage = textureImage;
+            this.position = position;
+            this.scale = scale;
+        }
+
         public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,
             int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed,
             string collisionCueName, int scoreValue)
@@ -29,9 +34,7 @@ namespace Puzzle
             this.textureImage = textureImage;
             this.position = position;
             this.frameSize = frameSize;
-            this.currentFrame = currentFrame;
             this.sheetSize = sheetSize;
-            this.speed = speed;
             this.collisionCueName = collisionCueName;
         }
 
@@ -44,7 +47,9 @@ namespace Puzzle
         public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             // Draw all sprites
-            spriteBatch.Draw(textureImage, position, Color.White);
+            //spriteBatch.Draw(textureImage, position, Color.White);
+            spriteBatch.Draw(
+                textureImage, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0);
         }
 
         public Vector2 GetPosition
