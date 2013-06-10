@@ -88,16 +88,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Masculino\Conducto_deferente_lado_derecho.fbx">
-      <Name>Conducto_deferente_lado_derecho</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Masculino\conducto_deferente_lado_Izquierdo.fbx">
-      <Name>conducto_deferente_lado_Izquierdo</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Masculino\epididiimio_lado_derecho.fbx">
       <Name>epididiimio_lado_derecho</Name>
       <Importer>FbxImporter</Importer>
@@ -108,11 +98,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Masculino\prostata.fbx">
-      <Name>prostata</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Masculino\tejido_erectil.fbx">
       <Name>tejido_erectil</Name>
       <Importer>FbxImporter</Importer>
@@ -120,11 +105,6 @@
     </Compile>
     <Compile Include="Masculino\testiculos_lado_izquierdo.fbx">
       <Name>testiculos_lado_izquierdo</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Masculino\testiculo_lado_derecho.fbx">
-      <Name>testiculo_lado_derecho</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -168,7 +148,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pruebas\testiculo derecho.fbx">
+    <Compile Include="Masculino\testiculo derecho.fbx">
       <Name>testiculo derecho</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
@@ -196,25 +176,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Masculino\conducto deferente der.fbx">
-      <Name>conducto deferente der</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Pruebas\conducto deferente der.fbx">
-      <Name>conducto deferente der</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Pruebas\conducto deferente der1.fbx">
+    <Compile Include="Masculino\conducto deferente der1.fbx">
       <Name>conducto deferente der1</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masculino\prostata.fbx">
+      <Name>prostata</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masculino\conducto deferente izq.fbx">
+      <Name>conducto deferente izq</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pruebas\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

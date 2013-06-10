@@ -29,8 +29,8 @@ namespace Puzzle
         int timeSinceLastFrame = 0;
         const int millisecondsPerFrame = 50000;
 
-        float moveSpeed = .25f;
-        float rotacion = 2.5f;
+        //float moveSpeed = .25f;
+        //float rotacion = 2.5f;
         const float escala = 0.875f;
         FuenteManager fuenteManager;
 
@@ -87,23 +87,35 @@ namespace Puzzle
                         new Vector3(-0.25f, -7.25f, 8.5f),
                         "Miembro"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Pruebas\conducto deferente der1"),
+                        Game.Content.Load<Model>(@"Masculino\conducto deferente der1"),
                         new Vector3(0.03619f * 7.2f, 0.03619f * 7.2f, 0.03619f * 7.2f) * 2f,
-                        new Vector3(13.5f, 19.5f, 89f),
-                        new Vector3(3f, -2.95f, 5.55f),
+                        new Vector3(3.97f, 176.6f, 88.669f),//8.97f, 171.6f, 91.169f
+                        new Vector3(3.5f, -2.7f, 5.8f),//3.5f, -2.45f, 6.3f
                         "Conducto deferente lado derecho"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Pruebas\testiculo derecho"),
+                        Game.Content.Load<Model>(@"Masculino\testiculo derecho"),
                         new Vector3(0.118f * 7.2f, 0.118f * 7.2f, 0.172f * 7.2f) * 2f,
                         new Vector3(90f,0f,0f),
                         new Vector3(2.2f, -7.4f, 8.5f),
                         "Testiculo derecho"));
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_Izquierdo"),
-                    //    new Vector3(0.326f, 0.326f, 0.326f),
-                    //    Vector3.Zero,
-                    //    new Vector3(0, 0, 0),
-                    //    "Conducto deferente lado izquierdo"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\testiculo derecho"),
+                        new Vector3(0.118f * 7.2f, 0.118f * 7.2f, 0.172f * 7.2f) * 2f,
+                        new Vector3(90f, 0f, 0f),
+                        new Vector3(-2.55f, -7.4f, 8.5f),
+                        "Testiculo izquierdo"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\conducto deferente izq"),
+                        new Vector3(0.07898f * 7.2f, 0.07898f * 7.2f, 0.07898f * 7.2f) * 2f,
+                        new Vector3(282.5f, 0f, 85f),
+                        new Vector3(-2.5f, -2, 5),
+                        "Conducto deferente lado izquierdo"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\prostata"),
+                        new Vector3(0.202f * 7.2f, 0.202f * 7.2f, 0.202f * 7.2f) * 2f,
+                        new Vector3(90f,90f,0f),
+                        new Vector3(0, 3.25f, 3.75f),
+                        "Prostata"));
                     //models.Add(new BasicModel(
                     //    Game.Content.Load<Model>(@"Masculino\epididiimio_lado_derecho"),
                     //    new Vector3(1.058f, 1.058f, 1.058f),
@@ -291,56 +303,54 @@ namespace Puzzle
         void manipularModelo(BasicModel modelo)
         {
             //Mover modelo
-            try
-            {
-                KeyboardState keyboardState = Keyboard.GetState();
-                if (keyboardState.IsKeyDown(Keys.I))
-                {
-                    rotacion = -rotacion;
-                }
-                if (keyboardState.IsKeyDown(Keys.Left))
-                {
-                    modelo.posicionActual += new Vector3(-moveSpeed, 0, 0);
-                }
-                if (keyboardState.IsKeyDown(Keys.Right))
-                {
-                    modelo.posicionActual += new Vector3(moveSpeed, 0, 0);
-                }
-                if (keyboardState.IsKeyDown(Keys.Up))
-                {
-                    modelo.posicionActual += new Vector3(0, moveSpeed, 0);
-                }
-                if (keyboardState.IsKeyDown(Keys.Down))
-                {
-                    modelo.posicionActual += new Vector3(0, -moveSpeed, 0);
-                }
-                if (keyboardState.IsKeyDown(Keys.I))
-                {
-                    modelo.posicionActual += new Vector3(0, 0, moveSpeed);
-                }
-                if (keyboardState.IsKeyDown(Keys.K))
-                {
-                    modelo.posicionActual += new Vector3(0, 0, -moveSpeed);
-                }
-                if (keyboardState.IsKeyDown(Keys.X))
-                {
-                    modelo.rotacionActual += new Vector3(MathHelper.ToRadians(rotacion), 0, 0);
-                    modelo.worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
-                }
-                if (keyboardState.IsKeyDown(Keys.Y))
-                {
-                    modelo.rotacionActual += new Vector3(0, MathHelper.ToRadians(rotacion), 0);
-                    modelo.worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion));
-                }
-                if (keyboardState.IsKeyDown(Keys.Z))
-                {
-                    modelo.rotacionActual += new Vector3(0, 0, MathHelper.ToRadians(rotacion));
-                    modelo.worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion));
-                }
-            }
-            catch
-            {
-            }
+            modelo.Move();
+
+            //try
+            //{
+            //    KeyboardState keyboardState = Keyboard.GetState();
+            //    if (keyboardState.IsKeyDown(Keys.Left))
+            //    {
+            //        modelo.posicionActual += new Vector3(-moveSpeed, 0, 0);
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.Right))
+            //    {
+            //        modelo.posicionActual += new Vector3(moveSpeed, 0, 0);
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.Up))
+            //    {
+            //        modelo.posicionActual += new Vector3(0, moveSpeed, 0);
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.Down))
+            //    {
+            //        modelo.posicionActual += new Vector3(0, -moveSpeed, 0);
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.I))
+            //    {
+            //        modelo.posicionActual += new Vector3(0, 0, moveSpeed);
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.K))
+            //    {
+            //        modelo.posicionActual += new Vector3(0, 0, -moveSpeed);
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.X))
+            //    {
+            //        modelo.rotacionActual += new Vector3(MathHelper.ToRadians(rotacion), 0, 0);
+            //        modelo.worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.Y))
+            //    {
+            //        modelo.rotacionActual += new Vector3(0, MathHelper.ToRadians(rotacion), 0);
+            //        modelo.worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion));
+            //    }
+            //    if (keyboardState.IsKeyDown(Keys.Z))
+            //    {
+            //        modelo.rotacionActual += new Vector3(0, 0, MathHelper.ToRadians(rotacion));
+            //        modelo.worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion));
+            //    }
+            //}
+            //catch
+            //{
+            //}
         }
     }
 }

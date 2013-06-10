@@ -65,9 +65,9 @@ namespace Puzzle
         {
             // TODO: Add your update code here
             coord = modelos.ElementAt(modeloSeleccionado).posicionActual.ToString();
-            rot = "{X:" + MathHelper.ToDegrees(modelos.ElementAt(modeloSeleccionado).rotacionActual.X) + 
-                " Y:" +  MathHelper.ToDegrees(modelos.ElementAt(modeloSeleccionado).rotacionActual.Y) +
-                " Z:" + MathHelper.ToDegrees(modelos.ElementAt(modeloSeleccionado).rotacionActual.Z) + "}";
+            rot = "{X:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.X + 
+                " Y:" +  modelos.ElementAt(modeloSeleccionado).rotacionActual.Y +
+                " Z:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.Z + "}";
             nombre = modelos.ElementAt(modeloSeleccionado).nombre;
 
             base.Update(gameTime);

@@ -18,6 +18,8 @@ namespace Puzzle
 
         //Escala
         public Vector3 escala;
+        const float moveSpeed = 0.25f;
+        const float rotacion = 2.5f;
 
         //Rotacion
         public Vector3 rotacionCorrecta = new Vector3(0,0,0);
@@ -43,43 +45,29 @@ namespace Puzzle
             rotacionActual = new Vector3(0,0,0);
         }
 
-        public BasicModel(Model m, Vector3 scale, Vector3 rotacion, Vector3 posicion, String nombre)
+        public BasicModel(Model m, Vector3 scale, Vector3 rot, Vector3 posicion, String nombre)
         {
             model = m;
             this.escala = scale;
-            this.rotacionInicial = rotacion;
+            this.rotacionInicial = rot;
             this.posicionInicial = posicion;
             this.posicionActual = posicion;
 
             worldTranslation = Matrix.Identity;
             worldRotation = Matrix.Identity;
 
-            rotacionActual += new Vector3(MathHelper.ToRadians(rotacion.X),
-                MathHelper.ToRadians(rotacion.Y), MathHelper.ToRadians(rotacion.Z));
+            rotacionActual = new Vector3(rot.X,rot.Y, rot.Z);
 
-            worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion.X));
-            worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion.Y));
-            worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion.Z));
+            worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rot.X));
+            worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rot.Y));
+            worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rot.Z));
 
             this.nombre = nombre;
         }
 
         public virtual void Update()
         {
-            //Si se pasa de 360
-            if (rotacionActual.X >= MathHelper.ToRadians(360))
-                rotacionActual.X -= MathHelper.ToRadians(360);
-            if (rotacionActual.Y >= MathHelper.ToRadians(360))
-                rotacionActual.Y -= MathHelper.ToRadians(360);
-            if (rotacionActual.Z >= MathHelper.ToRadians(360))
-                rotacionActual.Z -= MathHelper.ToRadians(360);
-            //Si es menor a 0
-            if (rotacionActual.X < MathHelper.ToRadians(0))
-                rotacionActual.X += MathHelper.ToRadians(360);
-            if (rotacionActual.Y < MathHelper.ToRadians(0))
-                rotacionActual.Y += MathHelper.ToRadians(360);
-            if (rotacionActual.Z < MathHelper.ToRadians(0))
-                rotacionActual.Z += MathHelper.ToRadians(360);
+            
         }
 
         public void Draw(Camera camera)
@@ -103,9 +91,78 @@ namespace Puzzle
         public virtual Matrix GetWorld()
         {
             //Escala * Rotacion * Posicion
-            return Matrix.CreateScale(escala) * 
-                worldRotation * 
+            return Matrix.CreateScale(escala) *
+                (Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X)) *
+                Matrix.CreateRotationY(MathHelper.ToRadians(rotacionActual.Y)) *
+                Matrix.CreateRotationZ(MathHelper.ToRadians(rotacionActual.Z))) *
+                //worldRotation * 
                 Matrix.CreateTranslation(posicionActual);
         }
+
+        public void Move()
+        {
+            //Si se pasa de 360
+            if (rotacionActual.X >= 360)
+                rotacionActual.X -= 360;
+            if (rotacionActual.Y >= 360)
+                rotacionActual.Y -= 360;
+            if (rotacionActual.Z >= 360)
+                rotacionActual.Z -= 360;
+            //Si es menor a 0
+            if (rotacionActual.X < 0)
+                rotacionActual.X += 360;
+            if (rotacionActual.Y < 0)
+                rotacionActual.Y += 360;
+            if (rotacionActual.Z < 0)
+                rotacionActual.Z += 360;
+
+            try
+            {
+                KeyboardState keyboardState = Keyboard.GetState();
+                if (keyboardState.IsKeyDown(Keys.Left))
+                {
+                    posicionActual += new Vector3(-moveSpeed, 0, 0);
+                }
+                if (keyboardState.IsKeyDown(Keys.Right))
+                {
+                    posicionActual += new Vector3(moveSpeed, 0, 0);
+                }
+                if (keyboardState.IsKeyDown(Keys.Up))
+                {
+                    posicionActual += new Vector3(0, moveSpeed, 0);
+                }
+                if (keyboardState.IsKeyDown(Keys.Down))
+                {
+                    posicionActual += new Vector3(0, -moveSpeed, 0);
+                }
+                if (keyboardState.IsKeyDown(Keys.I))
+                {
+                    posicionActual += new Vector3(0, 0, moveSpeed);
+                }
+                if (keyboardState.IsKeyDown(Keys.K))
+                {
+                    posicionActual += new Vector3(0, 0, -moveSpeed);
+                }
+                if (keyboardState.IsKeyDown(Keys.X))
+                {
+                    //rotacionActual += new Vector3(MathHelper.ToRadians(rotacion), 0, 0);
+                    //worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
+                    rotacionActual.X += rotacion;
+                    //worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
+                }
+                if (keyboardState.IsKeyDown(Keys.Y))
+                {
+                    rotacionActual.Y += rotacion;
+                    //worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion));
+                }
+                if (keyboardState.IsKeyDown(Keys.Z))
+                {
+                    rotacionActual.Z += rotacion;
+                    //worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion));
+                }
+            }
+            catch { }
+        }
+
     }//Class
 }//NAMESPACE

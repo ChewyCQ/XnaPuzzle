@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Sphere_003</Name>
     <Identity>
-      <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Pruebas\testiculo derecho.fbx</SourceFilename>
+      <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Masculino\testiculo derecho.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -25,7 +25,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material_006</Name>
       <Identity>
-        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Pruebas\testiculo derecho.fbx</SourceFilename>
+        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Masculino\testiculo derecho.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

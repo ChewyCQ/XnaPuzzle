@@ -6,14 +6,11 @@ Content\Femenino\Ovario derecho.xnb
 Content\Femenino\Ovario izquierdo.xnb
 Content\Femenino\Vejiga.xnb
 Content\Femenino\Útero.xnb
-Content\Masculino\Conducto_deferente_lado_derecho.xnb
-Content\Masculino\conducto_deferente_lado_Izquierdo.xnb
 Content\Masculino\epididiimio_lado_derecho.xnb
 Content\Masculino\epididimio_lado_izquierdo.xnb
 Content\Masculino\prostata.xnb
 Content\Masculino\tejido_erectil.xnb
 Content\Masculino\testiculos_lado_izquierdo.xnb
-Content\Masculino\testiculo_lado_derecho.xnb
 Content\Masculino\uretra.xnb
 Content\Masculino\vejiga.xnb
 Content\Fonts\Fuente.xnb
@@ -23,7 +20,6 @@ Content\Femenino\Uretra2.xnb
 Content\Femenino\Trompa de Falopio Derecha2.xnb
 Content\Femenino\Trompa de Falopio Izquierda2.xnb
 Content\Masculino\parte_del_pene2.xnb
-Content\Masculino\conducto deferente der.xnb
-Content\Pruebas\conducto deferente der.xnb
-Content\Pruebas\testiculo derecho.xnb
-Content\Pruebas\conducto deferente der1.xnb
+Content\Masculino\conducto deferente der1.xnb
+Content\Masculino\testiculo derecho.xnb
+Content\Masculino\conducto deferente izq.xnb

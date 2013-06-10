@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Cube_002</Name>
     <Identity>
-      <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Pruebas\conducto deferente der1.fbx</SourceFilename>
+      <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Masculino\conducto deferente der1.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -45,7 +45,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material_012</Name>
       <Identity>
-        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Pruebas\conducto deferente der1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Masculino\conducto deferente der1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -58,7 +58,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>Material_014</Name>
       <Identity>
-        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Pruebas\conducto deferente der1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Masculino\conducto deferente der1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -71,7 +71,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>Material_010</Name>
       <Identity>
-        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Pruebas\conducto deferente der1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\Masculino\conducto deferente der1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
