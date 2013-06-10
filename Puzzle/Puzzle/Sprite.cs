@@ -13,11 +13,15 @@ namespace Puzzle
         public string collisionCueName { get; private set; }
         protected float scale = 1;
         protected float originalScale = 1;
+        public float alto;
+        public float largo;
 
         public Sprite(Texture2D textureImage, Vector2 position)
         {
             this.textureImage = textureImage;
             this.position = position;
+            this.largo = textureImage.Width * scale;
+            this.alto = textureImage.Height * scale;
         }
 
         public Sprite(Texture2D textureImage, Vector2 position, float scale)
@@ -25,6 +29,8 @@ namespace Puzzle
             this.textureImage = textureImage;
             this.position = position;
             this.scale = scale;
+            this.largo = textureImage.Width * scale;
+            this.alto = textureImage.Height * scale;
         }
 
         public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,

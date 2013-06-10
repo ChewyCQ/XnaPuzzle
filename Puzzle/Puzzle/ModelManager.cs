@@ -24,22 +24,17 @@ namespace Puzzle
 
         BasicEffect effect;
 
-        int modeloSeleccionado = 0;
-
-        int timeSinceLastFrame = 0;
-        const int millisecondsPerFrame = 50000;
-
         //float moveSpeed = .25f;
         //float rotacion = 2.5f;
         const float escala = 0.875f;
-        FuenteManager fuenteManager;
+
+        
 
         public ModelManager(Game game, sexo sex)
             : base(game)
         {
             // TODO: Construct any child components here
             genero = sex;
-            timeSinceLastFrame = 0;
         }
 
         /// <summary>
@@ -228,9 +223,6 @@ namespace Puzzle
                     break;
             }
 
-            fuenteManager = new FuenteManager(Game, models);
-            Game.Components.Add(fuenteManager);
-
             base.LoadContent();
         }
 
@@ -242,20 +234,10 @@ namespace Puzzle
         {
             // TODO: Add your update code here
 
-            //Seleccion
-            manipularModelo(seleccionarModelo());
-
             // Loop through all models and call Update
             for (int i = 0; i < models.Count; ++i)
             {
                 models[i].Update();
-            }
-
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
-            {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                manipularModelo(seleccionarModelo());
             }
 
             base.Update(gameTime);
@@ -264,93 +246,12 @@ namespace Puzzle
         public override void Draw(GameTime gameTime)
         {
             //Activa el buffer en distancia (Z)
-            GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            //GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
             // Loop through and draw each model
-            foreach (BasicModel bm in models)
-            {
-                bm.Draw(((Game1)Game).camera);
-            }
-
-            //Dibuja el texto sobre lo demas
-            fuenteManager.Draw(gameTime);
-
             
 
             base.Draw(gameTime);
-        }
-
-        BasicModel seleccionarModelo()
-        {
-            try
-            {
-                KeyboardState keyboardState = Keyboard.GetState();
-                if (keyboardState.IsKeyDown(Keys.O))
-                {
-                    modeloSeleccionado++;
-
-                    if (modeloSeleccionado >= models.Count)
-                    {
-                        modeloSeleccionado = 0;
-                    }
-                    fuenteManager.modeloSeleccionado = modeloSeleccionado;
-                }
-            }
-            catch{}
-            return models.ElementAt(modeloSeleccionado);
-        }
-
-        void manipularModelo(BasicModel modelo)
-        {
-            //Mover modelo
-            modelo.Move();
-
-            //try
-            //{
-            //    KeyboardState keyboardState = Keyboard.GetState();
-            //    if (keyboardState.IsKeyDown(Keys.Left))
-            //    {
-            //        modelo.posicionActual += new Vector3(-moveSpeed, 0, 0);
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.Right))
-            //    {
-            //        modelo.posicionActual += new Vector3(moveSpeed, 0, 0);
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.Up))
-            //    {
-            //        modelo.posicionActual += new Vector3(0, moveSpeed, 0);
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.Down))
-            //    {
-            //        modelo.posicionActual += new Vector3(0, -moveSpeed, 0);
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.I))
-            //    {
-            //        modelo.posicionActual += new Vector3(0, 0, moveSpeed);
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.K))
-            //    {
-            //        modelo.posicionActual += new Vector3(0, 0, -moveSpeed);
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.X))
-            //    {
-            //        modelo.rotacionActual += new Vector3(MathHelper.ToRadians(rotacion), 0, 0);
-            //        modelo.worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.Y))
-            //    {
-            //        modelo.rotacionActual += new Vector3(0, MathHelper.ToRadians(rotacion), 0);
-            //        modelo.worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion));
-            //    }
-            //    if (keyboardState.IsKeyDown(Keys.Z))
-            //    {
-            //        modelo.rotacionActual += new Vector3(0, 0, MathHelper.ToRadians(rotacion));
-            //        modelo.worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion));
-            //    }
-            //}
-            //catch
-            //{
-            //}
         }
     }
 }

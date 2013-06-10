@@ -145,23 +145,33 @@ namespace Puzzle
                 }
                 if (keyboardState.IsKeyDown(Keys.X))
                 {
-                    //rotacionActual += new Vector3(MathHelper.ToRadians(rotacion), 0, 0);
-                    //worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
                     rotacionActual.X += rotacion;
-                    //worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rotacion));
                 }
                 if (keyboardState.IsKeyDown(Keys.Y))
                 {
                     rotacionActual.Y += rotacion;
-                    //worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion));
                 }
                 if (keyboardState.IsKeyDown(Keys.Z))
                 {
                     rotacionActual.Z += rotacion;
-                    //worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion));
                 }
             }
             catch { }
+        }
+
+        public void moverX(int signo)
+        {
+            posicionActual += new Vector3(signo * moveSpeed, 0, 0);
+        }
+
+        public void moverY(int signo)
+        {
+            posicionActual += new Vector3(0, signo * moveSpeed, 0);
+        }
+
+        public void moverZ(int signo)
+        {
+            posicionActual += new Vector3(0, 0, signo * moveSpeed);
         }
 
     }//Class
