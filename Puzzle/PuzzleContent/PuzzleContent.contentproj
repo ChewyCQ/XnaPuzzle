@@ -168,7 +168,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pruebas\" />
+    <Compile Include="Pruebas\testiculo derecho.fbx">
+      <Name>testiculo derecho</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Femenino\Trompa de Falopio Izquierda2.fbx">
@@ -187,6 +191,20 @@
   <ItemGroup>
     <Compile Include="Masculino\parte_del_pene2.fbx">
       <Name>parte_del_pene2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masculino\conducto deferente der.fbx">
+      <Name>conducto deferente der</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pruebas\conducto deferente der.fbx">
+      <Name>conducto deferente der</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

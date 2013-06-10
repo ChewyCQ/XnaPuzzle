@@ -4,8 +4,6 @@ Content\Imagenes\Botones\redo.xnb
 Content\Femenino\Cuerpo.xnb
 Content\Femenino\Ovario derecho.xnb
 Content\Femenino\Ovario izquierdo.xnb
-Content\Femenino\Trompa de Falopio Derecha.xnb
-Content\Femenino\Trompa de Falopio Izquierda.xnb
 Content\Femenino\Vejiga.xnb
 Content\Femenino\Útero.xnb
 Content\Masculino\Conducto_deferente_lado_derecho.xnb
@@ -21,8 +19,10 @@ Content\Masculino\vejiga.xnb
 Content\Fonts\Fuente.xnb
 Content\Femenino\Vagina2.xnb
 Content\Masculino\CuerpoCompleto.xnb
-Content\Masculino\parte_del_pene.xnb
 Content\Femenino\Uretra2.xnb
 Content\Femenino\Trompa de Falopio Derecha2.xnb
 Content\Femenino\Trompa de Falopio Izquierda2.xnb
 Content\Masculino\parte_del_pene2.xnb
+Content\Masculino\conducto deferente der.xnb
+Content\Pruebas\conducto deferente der.xnb
+Content\Pruebas\testiculo derecho.xnb

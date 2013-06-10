@@ -31,7 +31,7 @@ namespace Puzzle
 
         float moveSpeed = .25f;
         float rotacion = 2.5f;
-        float escala = 0.875f;
+        const float escala = 0.875f;
         FuenteManager fuenteManager;
 
         public ModelManager(Game game, sexo sex)
@@ -86,12 +86,18 @@ namespace Puzzle
                         new Vector3(270.5f, 0f, 0f),
                         new Vector3(-0.25f, -7.25f, 8.5f),
                         "Miembro"));
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_derecho"),
-                    //    new Vector3(0.326f, 0.326f, 0.326f),
-                    //    Vector3.Zero,
-                    //    new Vector3(0, 0, 0),
-                    //    "Conducto deferente lado derecho"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Pruebas\conducto deferente der"),
+                        new Vector3(0.03619f * 7.2f, 0.03619f * 7.2f, 0.03619f * 7.2f) * 2f,
+                        new Vector3(411.042f, 77.982f, 139.147f),
+                        new Vector3(0.21939f, 0.50613f, 8.58095f),
+                        "Conducto deferente lado derecho"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Pruebas\testiculo derecho"),
+                        new Vector3(0.118f * 7.2f, 0.118f * 7.2f, 0.172f * 7.2f) * 2f,
+                        new Vector3(90f,0f,0f),
+                        new Vector3(0.20643f, 0.33614f, 0.25335f),
+                        "Testiculo derecho"));
                     //models.Add(new BasicModel(
                     //    Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_Izquierdo"),
                     //    new Vector3(0.326f, 0.326f, 0.326f),

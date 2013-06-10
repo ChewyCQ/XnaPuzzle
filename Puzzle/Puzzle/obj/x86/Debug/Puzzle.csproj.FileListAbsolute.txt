@@ -4,8 +4,6 @@ C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x8
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Cuerpo.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Ovario derecho.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Ovario izquierdo.xnb
-C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Derecha.xnb
-C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Izquierda.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Vejiga.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Útero.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\Conducto_deferente_lado_derecho.xnb
@@ -27,8 +25,10 @@ C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\obj\x8
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\obj\x86\Debug\Puzzle.csprojResolveAssemblyReference.cache
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Vagina2.xnb
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\CuerpoCompleto.xnb
-C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\parte_del_pene.xnb
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Uretra2.xnb
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Derecha2.xnb
 C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Izquierda2.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\parte_del_pene2.xnb
+C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\conducto deferente der.xnb
+C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Pruebas\conducto deferente der.xnb
+C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Pruebas\testiculo derecho.xnb

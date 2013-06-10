@@ -68,32 +68,6 @@
       </Dependency>
     </Item>
     <Item>
-      <Source>Femenino\Trompa de Falopio Derecha.fbx</Source>
-      <Name>Femenino\Trompa de Falopio Derecha</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Derecha.xnb</Output>
-      <Time>2013-06-05T09:19:31.2613846-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Femenino\Trompa de Falopio Derecha_0.xml</Key>
-        <Value>2013-06-06T09:48:06.8875898-05:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Femenino\Trompa de Falopio Izquierda.fbx</Source>
-      <Name>Femenino\Trompa de Falopio Izquierda</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Trompa de Falopio Izquierda.xnb</Output>
-      <Time>2013-06-05T09:19:31.3213846-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Femenino\Trompa de Falopio Izquierda_0.xml</Key>
-        <Value>2013-06-06T09:48:07.8156428-05:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
       <Source>Femenino\Vejiga.fbx</Source>
       <Name>Femenino\Vejiga</Name>
       <Importer>FbxImporter</Importer>
@@ -280,20 +254,6 @@
       <Time>2013-06-05T09:19:31.1913845-05:00</Time>
     </Item>
     <Item>
-      <Source>Femenino\Trompa de Falopio Derecha.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Femenino\Trompa de Falopio Derecha_0.xml</Output>
-      <Time>2013-06-05T09:19:31.2613846-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Femenino\Trompa de Falopio Izquierda.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Femenino\Trompa de Falopio Izquierda_0.xml</Output>
-      <Time>2013-06-05T09:19:31.3213846-05:00</Time>
-    </Item>
-    <Item>
       <Source>Femenino\Vejiga.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
@@ -411,31 +371,11 @@
       </Dependency>
     </Item>
     <Item>
-      <Source>Masculino\parte_del_pene.fbx</Source>
-      <Name>Masculino\parte_del_pene</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\David\documents\visual studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\parte_del_pene.xnb</Output>
-      <Time>2013-06-08T18:24:57.6675101-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Masculino\parte_del_pene_0.xml</Key>
-        <Value>2013-06-08T18:27:26.3130121-05:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
       <Source>Masculino\CuerpoCompleto.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Masculino\CuerpoCompleto_0.xml</Output>
       <Time>2013-06-08T18:24:57.4674986-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Masculino\parte_del_pene.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Masculino\parte_del_pene_0.xml</Output>
-      <Time>2013-06-08T18:24:57.6675101-05:00</Time>
     </Item>
     <Item>
       <Source>Femenino\Uretra2.fbx</Source>
@@ -516,6 +456,66 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Masculino\parte_del_pene2_0.xml</Output>
       <Time>2013-06-09T18:02:33.5065547-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\conducto deferente der.fbx</Source>
+      <Name>Masculino\conducto deferente der</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\conducto deferente der.xnb</Output>
+      <Time>2013-06-09T19:25:01.0415376-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Masculino\conducto deferente der_0.xml</Key>
+        <Value>2013-06-09T19:26:53.2569559-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\conducto deferente der.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Masculino\conducto deferente der_0.xml</Output>
+      <Time>2013-06-09T19:25:01.0415376-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Pruebas\conducto deferente der.fbx</Source>
+      <Name>Pruebas\conducto deferente der</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Pruebas\conducto deferente der.xnb</Output>
+      <Time>2013-06-09T20:00:59.8670153-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Pruebas\conducto deferente der_0.xml</Key>
+        <Value>2013-06-09T20:03:58.9662592-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Pruebas\conducto deferente der.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Pruebas\conducto deferente der_0.xml</Output>
+      <Time>2013-06-09T20:00:59.8670153-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Pruebas\testiculo derecho.fbx</Source>
+      <Name>Pruebas\testiculo derecho</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Pruebas\testiculo derecho.xnb</Output>
+      <Time>2013-06-09T20:14:03.3478278-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Pruebas\testiculo derecho_0.xml</Key>
+        <Value>2013-06-09T20:15:45.8896929-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Pruebas\testiculo derecho.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Pruebas\testiculo derecho_0.xml</Output>
+      <Time>2013-06-09T20:14:03.3478278-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
