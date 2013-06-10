@@ -87,16 +87,16 @@ namespace Puzzle
                         new Vector3(-0.25f, -7.25f, 8.5f),
                         "Miembro"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Pruebas\conducto deferente der"),
+                        Game.Content.Load<Model>(@"Pruebas\conducto deferente der1"),
                         new Vector3(0.03619f * 7.2f, 0.03619f * 7.2f, 0.03619f * 7.2f) * 2f,
-                        new Vector3(411.042f, 77.982f, 139.147f),
-                        new Vector3(0.21939f, 0.50613f, 8.58095f),
+                        new Vector3(13.5f, 19.5f, 89f),
+                        new Vector3(3f, -2.95f, 5.55f),
                         "Conducto deferente lado derecho"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Pruebas\testiculo derecho"),
                         new Vector3(0.118f * 7.2f, 0.118f * 7.2f, 0.172f * 7.2f) * 2f,
                         new Vector3(90f,0f,0f),
-                        new Vector3(0.20643f, 0.33614f, 0.25335f),
+                        new Vector3(2.2f, -7.4f, 8.5f),
                         "Testiculo derecho"));
                     //models.Add(new BasicModel(
                     //    Game.Content.Load<Model>(@"Masculino\Conducto_deferente_lado_Izquierdo"),
@@ -152,20 +152,6 @@ namespace Puzzle
                     //    Vector3.Zero,
                     //    new Vector3(0, 0, 0),
                     //    "Vejiga"));
-
-
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Masculino\CuerpoCompleto"),
-                    //    new Vector3(1f, 1f, 1f),
-                    //    Vector3.Zero,
-                    //    new Vector3(0, 0, 0),
-                    //    "Cuerpo"));
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Masculino\parte_del_pene"),
-                    //    new Vector3(1f, 1f, 1f),
-                    //    new Vector3(257.5f, 347.5f, 0f),
-                    //    new Vector3(-6.5f, -28f, -17.5f),
-                    //    "Miembro"));
                     break;
 
                 case sexo.Femenino:
@@ -223,8 +209,6 @@ namespace Puzzle
                         new Vector3(200f, 247.5f, 65f),
                         new Vector3(-4.5f, 7.25f, 8.5f),
                         "Trompa de Falopio Izquierda"));
-
-                    
 
                     break;
 

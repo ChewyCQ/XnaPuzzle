@@ -51,6 +51,9 @@ namespace Puzzle
             this.posicionInicial = posicion;
             this.posicionActual = posicion;
 
+            worldTranslation = Matrix.Identity;
+            worldRotation = Matrix.Identity;
+
             rotacionActual += new Vector3(MathHelper.ToRadians(rotacion.X),
                 MathHelper.ToRadians(rotacion.Y), MathHelper.ToRadians(rotacion.Z));
 
@@ -58,9 +61,6 @@ namespace Puzzle
             worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rotacion.Y));
             worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rotacion.Z));
 
-            //worldRotation *= Matrix.CreateRotationX(rotacionActual.X);
-            //worldRotation *= Matrix.CreateRotationY(rotacionActual.Y);
-            //worldRotation *= Matrix.CreateRotationZ(rotacionActual.Z);
             this.nombre = nombre;
         }
 
