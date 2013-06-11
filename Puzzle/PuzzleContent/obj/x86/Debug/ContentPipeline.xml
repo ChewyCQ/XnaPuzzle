@@ -133,19 +133,6 @@
       </Dependency>
     </Item>
     <Item>
-      <Source>Masculino\tejido_erectil.fbx</Source>
-      <Name>Masculino\tejido_erectil</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\tejido_erectil.xnb</Output>
-      <Time>2013-06-05T09:21:58.3411501-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Masculino\tejido_erectil_0.xml</Key>
-        <Value>2013-06-06T09:48:29.0228558-05:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
       <Source>Masculino\testiculos_lado_izquierdo.fbx</Source>
       <Name>Masculino\testiculos_lado_izquierdo</Name>
       <Importer>FbxImporter</Importer>
@@ -165,10 +152,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\uretra.xnb</Output>
-      <Time>2013-06-05T09:21:58.5711505-05:00</Time>
+      <Time>2013-06-10T20:41:23.4461395-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Masculino\uretra_0.xml</Key>
-        <Value>2013-06-06T09:48:35.8022436-05:00</Value>
+        <Value>2013-06-10T21:49:39.7704358-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -250,13 +237,6 @@
       <Time>2013-06-10T04:18:50.4275136-05:00</Time>
     </Item>
     <Item>
-      <Source>Masculino\tejido_erectil.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Masculino\tejido_erectil_0.xml</Output>
-      <Time>2013-06-05T09:21:58.3411501-05:00</Time>
-    </Item>
-    <Item>
       <Source>Masculino\testiculos_lado_izquierdo.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
@@ -268,7 +248,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Masculino\uretra_0.xml</Output>
-      <Time>2013-06-05T09:21:58.5711505-05:00</Time>
+      <Time>2013-06-10T20:41:23.4461395-05:00</Time>
     </Item>
     <Item>
       <Source>Masculino\vejiga.fbx</Source>
@@ -510,6 +490,26 @@
       <Options>None</Options>
       <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Imagenes\Botones\select.xnb</Output>
       <Time>2013-06-10T10:17:44.7266695-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\tejido erectil.fbx</Source>
+      <Name>Masculino\tejido erectil</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\tejido erectil.xnb</Output>
+      <Time>2013-06-10T21:29:52.2125114-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Masculino\tejido erectil_0.xml</Key>
+        <Value>2013-06-10T21:49:39.5374225-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\tejido erectil.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Masculino\tejido erectil_0.xml</Output>
+      <Time>2013-06-10T21:29:52.2125114-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

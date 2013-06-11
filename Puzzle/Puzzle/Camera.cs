@@ -45,10 +45,10 @@ namespace Puzzle
                 width / height,
                 1, 3000);
 
-            /*
+            
             Mouse.SetPosition((int)width / 2, (int)height / 2);
             originalMouseState = Mouse.GetState();
-             */
+             
         }
 
         public override void Initialize()
@@ -60,10 +60,10 @@ namespace Puzzle
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            /*
+            
             float timeDifference = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             ProcessInput(timeDifference);
-            */
+            
 
             base.Update(gameTime);
         }
@@ -84,7 +84,7 @@ namespace Puzzle
 
         private void ProcessInput(float amount)
         {
-            /*
+            
             MouseState currentMouseState = Mouse.GetState();
             if (currentMouseState != originalMouseState)
             {
@@ -95,7 +95,7 @@ namespace Puzzle
                 Mouse.SetPosition((int)width / 2, (int)height / 2);
                 UpdateViewMatrix();
             }
-            */
+            
 
             //float speed = 0.5f;
             Vector3 moveVector = new Vector3(0, 0, 0);

@@ -77,7 +77,7 @@ namespace Puzzle
                         "Cuerpo Masculino"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\parte_del_pene2"),
-                        new Vector3(0.203f * 7.2f, 0.203f * 7.2f, 0.203f * 7.2f) * escala * 2,
+                        new Vector3(0.203f * 7.6f, 0.203f * 7.6f, 0.203f * 7.6f) * escala * 2,
                         new Vector3(270.5f, 0f, 0f),
                         new Vector3(-0.25f, -7.25f, 8.5f),
                         "Miembro"));
@@ -87,6 +87,12 @@ namespace Puzzle
                         new Vector3(3.97f, 176.6f, 88.669f),//8.97f, 171.6f, 91.169f
                         new Vector3(3.5f, -2.7f, 5.8f),//3.5f, -2.45f, 6.3f
                         "Conducto deferente lado derecho"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\conducto deferente izq"),
+                        new Vector3(0.07898f * 7.2f, 0.07898f * 7.2f, 0.07898f * 7.2f) * 2f,
+                        new Vector3(282.5f, 0f, 85f),
+                        new Vector3(-2.5f, -2, 5),
+                        "Conducto deferente lado izquierdo"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\testiculo derecho"),
                         new Vector3(0.118f * 7.2f, 0.118f * 7.2f, 0.172f * 7.2f) * 2f,
@@ -100,17 +106,23 @@ namespace Puzzle
                         new Vector3(-2.55f, -7.4f, 8.5f),
                         "Testiculo izquierdo"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\conducto deferente izq"),
-                        new Vector3(0.07898f * 7.2f, 0.07898f * 7.2f, 0.07898f * 7.2f) * 2f,
-                        new Vector3(282.5f, 0f, 85f),
-                        new Vector3(-2.5f, -2, 5),
-                        "Conducto deferente lado izquierdo"));
-                    models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\prostata"),
                         new Vector3(0.202f * 7.2f, 0.202f * 7.2f, 0.202f * 7.2f) * 2f,
                         new Vector3(90f,90f,0f),
                         new Vector3(0, 3.25f, 3.75f),
                         "Prostata"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\uretra"),
+                        new Vector3(0.108f * 7.2f, 0.108f * 7.2f, 0.108f * 7.2f) * 2f,
+                        new Vector3(270f, 0f, 0f),
+                        new Vector3(-0.04f, -4.05f, 10.1f),
+                        "Uretra"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\tejido erectil"),
+                        new Vector3(0.0974f * 7.2f, 0.0974f * 7.2f, 0.0974f * 7.2f) * 2f,
+                        new Vector3(265f, 0f, 0f),
+                        new Vector3(0f, -2.65f, 9.55f),
+                        "Tejido erectil"));
                     //models.Add(new BasicModel(
                     //    Game.Content.Load<Model>(@"Masculino\epididiimio_lado_derecho"),
                     //    new Vector3(1.058f, 1.058f, 1.058f),
@@ -147,12 +159,7 @@ namespace Puzzle
                     //    Vector3.Zero,
                     //    new Vector3(0, 0, 0),
                     //    "Testiculo izquierdo"));
-                    //models.Add(new BasicModel(
-                    //    Game.Content.Load<Model>(@"Masculino\uretra"),
-                    //    new Vector3(0.995f, 0.995f, 0.995f),
-                    //    Vector3.Zero,
-                    //    new Vector3(0, 0, 0),
-                    //    "Uretra"));
+
                     //models.Add(new BasicModel(
                     //    Game.Content.Load<Model>(@"Masculino\vejiga"),
                     //    new Vector3(1.893f, 1.893f, 1.893f),

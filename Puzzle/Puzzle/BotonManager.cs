@@ -127,6 +127,7 @@ namespace Puzzle
                 
             }
 
+            manipularModelo(modelos.ElementAt(modeloSeleccionado));
             botones();
 
             base.Update(gameTime);
@@ -135,11 +136,6 @@ namespace Puzzle
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-
-            foreach (BasicModel bm in modelos)
-            {
-                //bm.Draw(((Game1)Game).camera);
-            }
 
             for (int c = modelosNum; c < modelos.Count; c++) 
             {
@@ -183,6 +179,22 @@ namespace Puzzle
         void botones()
         {
             MouseState mouseState = Mouse.GetState();
+
+            try 
+            {
+                KeyboardState keyboardState = Keyboard.GetState();
+                if (keyboardState.IsKeyDown(Keys.O))
+                {
+                    modeloSeleccionado++;
+
+                    if (modeloSeleccionado >= modelos.Count)
+                    {
+                        modeloSeleccionado = 0;
+                    }
+                    fuenteManager.modeloSeleccionado = modeloSeleccionado;
+                }
+            }
+            catch { }
 
             if (mouseState.LeftButton == ButtonState.Pressed)
             {

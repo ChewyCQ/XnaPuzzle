@@ -18,7 +18,7 @@ namespace Puzzle
 
         //Escala
         public Vector3 escala;
-        const float moveSpeed = 0.25f;
+        const float moveSpeed = 0.05f;
         const float rotacion = 2.5f;
 
         //Rotacion
