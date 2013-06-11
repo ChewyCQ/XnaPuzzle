@@ -24,16 +24,25 @@ namespace Puzzle
 
         BasicEffect effect;
 
-        //float moveSpeed = .25f;
-        //float rotacion = 2.5f;
         const float escala = 0.875f;
 
-        
+        int screenHeight;
+        int screenWidth;
 
         public ModelManager(Game game, sexo sex)
             : base(game)
         {
             // TODO: Construct any child components here
+            
+            genero = sex;
+        }
+
+        public ModelManager(Game game, sexo sex, int screenHeight, int screenWidth)
+            : base(game)
+        {
+            // TODO: Construct any child components here
+            this.screenHeight = screenHeight;
+            this.screenWidth = screenWidth;
             genero = sex;
         }
 
@@ -86,12 +95,14 @@ namespace Puzzle
                         new Vector3(0.03619f * 7.2f, 0.03619f * 7.2f, 0.03619f * 7.2f) * 2f,
                         new Vector3(3.97f, 176.6f, 88.669f),//8.97f, 171.6f, 91.169f
                         new Vector3(3.5f, -2.7f, 5.8f),//3.5f, -2.45f, 6.3f
+                        new Vector3(-25f, 10, 7.2f),
                         "Conducto deferente derecho"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\conducto deferente izq"),
                         new Vector3(0.07898f * 7.2f, 0.07898f * 7.2f, 0.07898f * 7.2f) * 2f,
                         new Vector3(282.5f, 0f, 85f),
                         new Vector3(-2.5f, -2, 5),
+                        new Vector3(-25f, 5, 5f),
                         "Conducto deferente izquierdo"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\testiculo derecho"),

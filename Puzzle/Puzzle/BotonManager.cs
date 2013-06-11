@@ -199,7 +199,7 @@ namespace Puzzle
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 //Mover izq
-                if (mouseState.X > botonLeft.GetPosition.X && 
+                if (mouseState.X > botonLeft.GetPosition.X &&
                     mouseState.X < botonLeft.GetPosition.X + botonLeft.largo &&
                     mouseState.Y > botonLeft.GetPosition.Y &&
                     mouseState.Y < botonLeft.GetPosition.Y + botonLeft.alto)
@@ -243,7 +243,6 @@ namespace Puzzle
                         modelosNum = 1;
                     else
                         modelosNum = 0;
-                    //seleccionarModelo();
                 }
 
                 if (mouseState.X > select.GetPosition.X &&
@@ -251,9 +250,37 @@ namespace Puzzle
                     mouseState.Y > select.GetPosition.Y &&
                     mouseState.Y < select.GetPosition.Y + select.alto)
                 {
-                    seleccionarModelo();
+                    //seleccionarModelo();
+                    figuraCorrecta();
+                }
+            }
+            else 
+            {
+                if (mouseState.X > select.GetPosition.X &&
+                                   mouseState.X < select.GetPosition.X + select.largo &&
+                                   mouseState.Y > select.GetPosition.Y &&
+                                   mouseState.Y < select.GetPosition.Y + select.alto)
+                {
+                    figuraActual();
                 }
             }
         }
+
+        void figuraCorrecta()
+        {
+            for (int c = modelosNum; c < modelos.Count; c++)
+            {
+                modelos.ElementAt(c).figuraCorrecta();
+            }
+        }
+
+        void figuraActual()
+        {
+            for (int c = modelosNum; c < modelos.Count; c++)
+            {
+                modelos.ElementAt(c).figuraActual();
+            }
+        }
+
     }
 }

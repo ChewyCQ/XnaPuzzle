@@ -16,6 +16,8 @@ namespace Puzzle
 
         public String nombre;
 
+        public Boolean acomodado = false;
+
         //Escala
         public Vector3 escala;
         const float moveSpeed = 0.05f;
@@ -28,8 +30,9 @@ namespace Puzzle
 
         //Coordenadas
         public Vector3 posicionCorrecta;
-        public Vector3 posicionInicial;
+        public Vector3 posicionAuxiliar;
         public Vector3 posicionActual;
+
 
         public List<BasicModel> modelos;
 
@@ -45,18 +48,42 @@ namespace Puzzle
             rotacionActual = new Vector3(0,0,0);
         }
 
+        //Constructor q inicia acomodado
         public BasicModel(Model m, Vector3 scale, Vector3 rot, Vector3 posicion, String nombre)
         {
             model = m;
             this.escala = scale;
             this.rotacionInicial = rot;
-            this.posicionInicial = posicion;
+            this.posicionCorrecta = posicion;
             this.posicionActual = posicion;
+            this.posicionAuxiliar = posicion;
 
             worldTranslation = Matrix.Identity;
             worldRotation = Matrix.Identity;
 
             rotacionActual = new Vector3(rot.X,rot.Y, rot.Z);
+
+            worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rot.X));
+            worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rot.Y));
+            worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rot.Z));
+
+            this.nombre = nombre;
+        }
+
+        //Constructor que inicia desacomodado
+        public BasicModel(Model m, Vector3 scale, Vector3 rot, Vector3 posicion, Vector3 inicial, String nombre)
+        {
+            model = m;
+            this.escala = scale;
+            this.rotacionInicial = rot;
+            this.posicionCorrecta = posicion;
+            this.posicionActual = inicial;
+            this.posicionAuxiliar = posicion;
+
+            worldTranslation = Matrix.Identity;
+            worldRotation = Matrix.Identity;
+
+            rotacionActual = new Vector3(rot.X, rot.Y, rot.Z);
 
             worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rot.X));
             worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rot.Y));
@@ -172,6 +199,28 @@ namespace Puzzle
         public void moverZ(int signo)
         {
             posicionActual += new Vector3(0, 0, signo * moveSpeed);
+        }
+
+        public void proximidad()
+        {
+            if (!acomodado)
+            {
+                //if (po)
+            }
+        }
+
+        public void figuraCorrecta()
+        {
+            if (posicionAuxiliar != posicionActual)
+            {
+                posicionAuxiliar = posicionActual;
+                posicionActual = posicionCorrecta;
+            }
+        }
+
+        public void figuraActual()
+        {
+            posicionActual = posicionAuxiliar;
         }
 
     }//Class

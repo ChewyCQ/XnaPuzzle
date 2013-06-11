@@ -174,7 +174,7 @@ namespace Puzzle
 
         void masculinoSeleccionado() 
         {
-            modelManager = new ModelManager(this, ModelManager.sexo.Masculino);
+            modelManager = new ModelManager(this, ModelManager.sexo.Masculino, screenHeight, screenWidth);
             Components.Add(modelManager);
             spriteManager.Enabled = false;
             spriteManager.Visible = false;
@@ -185,7 +185,7 @@ namespace Puzzle
 
         void femeninooSeleccionado() 
         {
-            modelManager = new ModelManager(this, ModelManager.sexo.Femenino);
+            modelManager = new ModelManager(this, ModelManager.sexo.Femenino, screenHeight, screenWidth);
             Components.Add(modelManager);
             spriteManager.Enabled = false;
             spriteManager.Visible = false;
