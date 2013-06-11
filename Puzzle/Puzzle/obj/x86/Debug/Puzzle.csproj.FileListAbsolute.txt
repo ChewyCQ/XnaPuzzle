@@ -6,10 +6,7 @@ C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x8
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Ovario izquierdo.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Vejiga.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Femenino\Útero.xnb
-C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\epididiimio_lado_derecho.xnb
-C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\epididimio_lado_izquierdo.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\prostata.xnb
-C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\testiculos_lado_izquierdo.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\uretra.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Masculino\vejiga.xnb
 C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Fonts\Fuente.xnb

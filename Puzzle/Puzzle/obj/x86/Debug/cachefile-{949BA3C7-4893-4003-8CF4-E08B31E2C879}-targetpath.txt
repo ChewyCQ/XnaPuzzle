@@ -6,10 +6,7 @@ Content\Femenino\Ovario derecho.xnb
 Content\Femenino\Ovario izquierdo.xnb
 Content\Femenino\Vejiga.xnb
 Content\Femenino\Útero.xnb
-Content\Masculino\epididiimio_lado_derecho.xnb
-Content\Masculino\epididimio_lado_izquierdo.xnb
 Content\Masculino\prostata.xnb
-Content\Masculino\testiculos_lado_izquierdo.xnb
 Content\Masculino\uretra.xnb
 Content\Masculino\vejiga.xnb
 Content\Fonts\Fuente.xnb

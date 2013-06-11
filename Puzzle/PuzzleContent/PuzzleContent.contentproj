@@ -88,28 +88,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Masculino\epididiimio_lado_derecho.fbx">
-      <Name>epididiimio_lado_derecho</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Masculino\epididimio_lado_izquierdo.fbx">
-      <Name>epididimio_lado_izquierdo</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Masculino\testiculos_lado_izquierdo.fbx">
-      <Name>testiculos_lado_izquierdo</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Masculino\vejiga.fbx">
-      <Name>vejiga</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Fonts\Fuente.spritefont">
       <Name>Fuente</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -236,8 +214,13 @@
       <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Pruebas\" />
+    <Compile Include="Masculino\vejiga.fbx">
+      <Name>vejiga</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
