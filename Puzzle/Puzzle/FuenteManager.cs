@@ -26,7 +26,7 @@ namespace Puzzle
         String rot;
         String nombre;
 
-        public int modeloSeleccionado = 0;
+        public int modeloSeleccionado = 2;
 
         public List<BasicModel> modelos;
 

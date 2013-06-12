@@ -451,6 +451,15 @@
       <Output>obj\x86\Debug\Masculino\tejido erectil_0.xml</Output>
       <Time>2013-06-10T21:29:52.2125114-05:00</Time>
     </Item>
+    <Item>
+      <Source>Imagenes\Botones\eye.png</Source>
+      <Name>Imagenes\Botones\eye</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Imagenes\Botones\eye.xnb</Output>
+      <Time>2013-06-12T01:53:01.3558103-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

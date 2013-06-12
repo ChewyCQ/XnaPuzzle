@@ -21,7 +21,7 @@ namespace Puzzle
         int modeloSeleccionado = 2;
 
         int timeSinceLastClick = 0;
-        const int millisecondsPerClick = 50;
+        const int millisecondsPerClick = 75;
 
         int modelosNum = 0;
 
@@ -31,7 +31,7 @@ namespace Puzzle
         Sprite botonUp;
         Sprite botonDown;
         Sprite cuerpo;
-        Sprite select;
+        Sprite preview;
 
         FuenteManager fuenteManager;
 
@@ -66,7 +66,7 @@ namespace Puzzle
             Texture2D upTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/up");
             Texture2D downTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/down");
             Texture2D cuerpoTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/cuerpo");
-            Texture2D selectTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/select");
+            Texture2D previewTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/eye");
 
             //Cargar Sprites
             botonLeft = new Sprite(leftTextura,
@@ -94,10 +94,10 @@ namespace Puzzle
                     pos),
                     0.5f);
             pos += cuerpo.alto;
-            select = new Sprite(selectTextura,
-                new Vector2((ScreenWidht) - (selectTextura.Width * 0.1f),
-                    pos),
-                    0.1f);
+            preview = new Sprite(previewTextura,
+                new Vector2(0,
+                    (float)(ScreenHeight - (previewTextura.Height * 0.75))),
+                    0.75f);
 
             fuenteManager = new FuenteManager(Game, modelos);
             Game.Components.Add(fuenteManager);
@@ -107,9 +107,11 @@ namespace Puzzle
 
         public override void Update(GameTime gameTime)
         {
-            
-
             // TODO: Add your update code here
+            todosAcomodados();
+
+            if (modelos.ElementAt(modeloSeleccionado).acomodado)
+                seleccionarModelo();
 
             timeSinceLastClick += gameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastClick > millisecondsPerClick)
@@ -138,7 +140,7 @@ namespace Puzzle
             botonUp.Draw(gameTime, spriteBatch);
             botonDown.Draw(gameTime, spriteBatch);
             cuerpo.Draw(gameTime, spriteBatch);
-            select.Draw(gameTime, spriteBatch);
+            preview.Draw(gameTime, spriteBatch);
             
             spriteBatch.End();
 
@@ -151,16 +153,12 @@ namespace Puzzle
         void seleccionarModelo()
         {
             modeloSeleccionado++;
-            
-            if (modeloSeleccionado == 0)
+
+            if (modeloSeleccionado >= modelos.Count())
             {
                 modeloSeleccionado = 1;
             }
 
-            if (modeloSeleccionado >= modelos.Count)
-            {
-                modeloSeleccionado = 1;
-            }
             fuenteManager.modeloSeleccionado = modeloSeleccionado;
         }
 
@@ -179,13 +177,14 @@ namespace Puzzle
                 KeyboardState keyboardState = Keyboard.GetState();
                 if (keyboardState.IsKeyDown(Keys.O))
                 {
-                    modeloSeleccionado++;
+                    seleccionarModelo();
+                    //modeloSeleccionado++;
 
-                    if (modeloSeleccionado >= modelos.Count)
-                    {
-                        modeloSeleccionado = 1;
-                    }
-                    fuenteManager.modeloSeleccionado = modeloSeleccionado;
+                    //if (modeloSeleccionado >= modelos.Count)
+                    //{
+                    //    modeloSeleccionado = 1;
+                    //}
+                    //fuenteManager.modeloSeleccionado = modeloSeleccionado;
                 }
             }
             catch { }
@@ -239,10 +238,10 @@ namespace Puzzle
                 }
 
                 //Botono del fondo
-                if (mouseState.X > select.GetPosition.X &&
-                    mouseState.X < select.GetPosition.X + select.largo &&
-                    mouseState.Y > select.GetPosition.Y &&
-                    mouseState.Y < select.GetPosition.Y + select.alto)
+                if (mouseState.X > preview.GetPosition.X &&
+                    mouseState.X < preview.GetPosition.X + preview.largo &&
+                    mouseState.Y > preview.GetPosition.Y &&
+                    mouseState.Y < preview.GetPosition.Y + preview.alto)
                 {
                     for (int c = modelosNum; c < modelos.Count; c++)
                     {
@@ -258,10 +257,10 @@ namespace Puzzle
                 }
 
 
-                if (mouseState.X > select.GetPosition.X &&
-                    mouseState.X < select.GetPosition.X + select.largo &&
-                    mouseState.Y > select.GetPosition.Y &&
-                    mouseState.Y < select.GetPosition.Y + select.alto)
+                if (mouseState.X > preview.GetPosition.X &&
+                    mouseState.X < preview.GetPosition.X + preview.largo &&
+                    mouseState.Y > preview.GetPosition.Y &&
+                    mouseState.Y < preview.GetPosition.Y + preview.alto)
                 {
                     //figuraCorrecta();
                 }
@@ -297,6 +296,17 @@ namespace Puzzle
             else
                 if (modelos.ElementAt(modeloSeleccionado).posicionActual.Y > 15)
                     modelos.ElementAt(modeloSeleccionado).posicionActual.Y = 15;
+        }
+
+        Boolean todosAcomodados()
+        {
+            foreach (BasicModel model in modelos)
+            {
+                if (!model.acomodado)
+                    return false;
+            }
+            Game.Exit();
+            return true;
         }
 
     }
