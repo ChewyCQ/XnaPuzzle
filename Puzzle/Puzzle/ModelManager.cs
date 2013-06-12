@@ -158,6 +158,13 @@ namespace Puzzle
                         new Vector3(0, -7.5f, .2f),
                         "Cuerpo"));
                     models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Uretra2"),
+                        new Vector3(5.051f, 6.782f, 5.316f) * escala,//escala
+                        new Vector3(352.5f, 0f, 92.5f),//rotacion
+                        new Vector3(0f, -4.25f, 7f),//posicion
+                        new Vector3(-29f, 10.25f, 7f),//posicion inicial
+                        "Uretra"));
+                    models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Útero"),
                         new Vector3(5.028f, 4.260f, 4.268f) * escala,
                         new Vector3(247.5f, 85f, 342.5f),
@@ -171,13 +178,6 @@ namespace Puzzle
                         new Vector3(-1f, -1.25f, 7f),
                         new Vector3(21f, 5.25f, 7f),
                         "Vejiga"));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Uretra2"),
-                        new Vector3(5.051f, 6.782f, 5.316f) * escala,//escala
-                        new Vector3(352.5f, 0f, 92.5f),//rotacion
-                        new Vector3(0f, -4.25f, 7f),//posicion
-                        new Vector3(-29f, 10.25f, 7f),//posicion inicial
-                        "Uretra"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Vagina2"),
                         new Vector3(1f, 1f, 1f) * escala,//1f, 1f, 0.766f
