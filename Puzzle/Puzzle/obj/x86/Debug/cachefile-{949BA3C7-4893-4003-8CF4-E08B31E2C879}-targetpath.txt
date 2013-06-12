@@ -27,3 +27,4 @@ Content\Imagenes\Botones\cuerpo.xnb
 Content\Imagenes\Botones\select.xnb
 Content\Masculino\tejido erectil.xnb
 Content\Imagenes\Botones\eye.xnb
+Content\Imagenes\Botones\silueta.xnb

@@ -60,39 +60,42 @@ namespace Puzzle
 
             float pos = 0;
 
+            float escalaFlechas = 0.10f;
+
             //Texturas
             Texture2D leftTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/left");
             Texture2D rightTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/right");
             Texture2D upTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/up");
             Texture2D downTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/down");
-            Texture2D cuerpoTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/cuerpo");
+            Texture2D cuerpoTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/silueta");
             Texture2D previewTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/eye");
 
             //Cargar Sprites
-            botonLeft = new Sprite(leftTextura,
-                new Vector2((ScreenWidht) - (leftTextura.Width * 0.15f),
-                    pos),
-                    0.15f);
-            pos += botonLeft.alto;
-            botonRight = new Sprite(rightTextura,
-                new Vector2((ScreenWidht) - (rightTextura.Width * 0.15f),
-                    pos),
-                    0.15f);
-            pos += botonRight.alto;
+            pos += upTextura.Height * escalaFlechas;
             botonUp = new Sprite(upTextura,
-                new Vector2((ScreenWidht) - (upTextura.Width * 0.15f),
+                new Vector2((ScreenWidht) - (upTextura.Width * escalaFlechas * 1.75f),
                     pos),
-                    0.15f);
+                    escalaFlechas);
             pos += botonUp.alto;
-            botonDown = new Sprite(downTextura,
-                new Vector2((ScreenWidht) - (downTextura.Width * 0.15f),
+            botonLeft = new Sprite(leftTextura,
+                new Vector2((ScreenWidht) - (leftTextura.Width * escalaFlechas * 2),
                     pos),
-                    0.15f);
+                    escalaFlechas);
+            //pos += botonLeft.alto;
+            botonRight = new Sprite(rightTextura,
+                new Vector2((ScreenWidht) - (rightTextura.Width * escalaFlechas),
+                    pos),
+                    escalaFlechas);
+            pos += botonRight.alto;
+            botonDown = new Sprite(downTextura,
+                new Vector2((ScreenWidht) - (downTextura.Width * escalaFlechas * 1.75f),
+                    pos),
+                    escalaFlechas);
             pos += botonDown.alto;
             cuerpo = new Sprite(cuerpoTextura,
-                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.5f),
+                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.25f),
                     pos),
-                    0.5f);
+                    0.25f);
             pos += cuerpo.alto;
             preview = new Sprite(previewTextura,
                 new Vector2(0,

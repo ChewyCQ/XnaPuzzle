@@ -460,6 +460,15 @@
       <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Imagenes\Botones\eye.xnb</Output>
       <Time>2013-06-12T01:53:01.3558103-05:00</Time>
     </Item>
+    <Item>
+      <Source>Imagenes\Botones\silueta.png</Source>
+      <Name>Imagenes\Botones\silueta</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Imagenes\Botones\silueta.xnb</Output>
+      <Time>2013-06-12T09:41:23.0397266-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
