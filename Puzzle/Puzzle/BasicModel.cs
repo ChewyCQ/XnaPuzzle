@@ -9,20 +9,17 @@ namespace Puzzle
     public class BasicModel
     {
         public Model model { get; protected set; }
-        public Matrix world = Matrix.Identity;
-
-        public Matrix worldTranslation = Matrix.Identity;
-        public Matrix worldRotation = Matrix.Identity;
 
         public String nombre;
 
         public Boolean acomodado = false;
+        public Boolean preview = false;
 
         const float proximity = 2;
 
         //Escala
         public Vector3 escala;
-        const float moveSpeed = 1.0f;
+        float moveSpeed = 1.0f;
         const float rotacion = 2.5f;
 
         //Rotacion
@@ -32,7 +29,6 @@ namespace Puzzle
 
         //Coordenadas
         public Vector3 posicionCorrecta;
-        public Vector3 posicionAuxiliar;
         public Vector3 posicionActual;
 
 
@@ -58,17 +54,8 @@ namespace Puzzle
             this.rotacionInicial = rot;
             this.posicionCorrecta = posicion;
             this.posicionActual = posicion;
-            this.posicionAuxiliar = posicion;
-
-            worldTranslation = Matrix.Identity;
-            worldRotation = Matrix.Identity;
-
             rotacionActual = new Vector3(rot.X,rot.Y, rot.Z);
-
-            worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rot.X));
-            worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rot.Y));
-            worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rot.Z));
-
+            
             this.nombre = nombre;
         }
 
@@ -80,17 +67,9 @@ namespace Puzzle
             this.rotacionInicial = rot;
             this.posicionCorrecta = posicion;
             this.posicionActual = inicial;
-            this.posicionAuxiliar = inicial;
-
-            worldTranslation = Matrix.Identity;
-            worldRotation = Matrix.Identity;
-
+            
             rotacionActual = new Vector3(rot.X, rot.Y, rot.Z);
-
-            worldRotation *= Matrix.CreateRotationX(MathHelper.ToRadians(rot.X));
-            worldRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(rot.Y));
-            worldRotation *= Matrix.CreateRotationZ(MathHelper.ToRadians(rot.Z));
-
+            
             this.nombre = nombre;
         }
 
@@ -120,12 +99,18 @@ namespace Puzzle
         public virtual Matrix GetWorld()
         {
             //Escala * Rotacion * Posicion
-            return Matrix.CreateScale(escala) *
-                (Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X)) *
-                Matrix.CreateRotationY(MathHelper.ToRadians(rotacionActual.Y)) *
-                Matrix.CreateRotationZ(MathHelper.ToRadians(rotacionActual.Z))) *
-                //worldRotation * 
-                Matrix.CreateTranslation(posicionActual);
+            if (!preview)
+                return Matrix.CreateScale(escala) *
+                    (Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X)) *
+                    Matrix.CreateRotationY(MathHelper.ToRadians(rotacionActual.Y)) *
+                    Matrix.CreateRotationZ(MathHelper.ToRadians(rotacionActual.Z))) *
+                    Matrix.CreateTranslation(posicionActual);
+            else
+                return Matrix.CreateScale(escala) *
+                    (Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X)) *
+                    Matrix.CreateRotationY(MathHelper.ToRadians(rotacionActual.Y)) *
+                    Matrix.CreateRotationZ(MathHelper.ToRadians(rotacionActual.Z))) *
+                    Matrix.CreateTranslation(posicionCorrecta);
         }
 
         public void Move()
@@ -210,22 +195,10 @@ namespace Puzzle
                 if (proximidadEnX() && proximidadEnY() && proximidadEnZ())
                 {
                     posicionActual = posicionCorrecta;
+                    acomodado = true;
+                    moveSpeed = 0;
                 }
             }
-        }
-
-        public void figuraCorrecta()
-        {
-            if (posicionAuxiliar != posicionActual)
-            {
-                posicionAuxiliar = posicionActual;
-                posicionActual = posicionCorrecta;
-            }
-        }
-
-        public void figuraActual()
-        {
-            posicionActual = posicionAuxiliar;
         }
 
         Boolean proximidadEnX()

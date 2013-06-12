@@ -18,10 +18,10 @@ namespace Puzzle
 
         public List<BasicModel> modelos;
 
-        int modeloSeleccionado = 1;
+        int modeloSeleccionado = 2;
 
-        int timeSinceLastFrame = 0;
-        const int millisecondsPerFrame = 50000;
+        int timeSinceLastClick = 0;
+        const int millisecondsPerClick = 50;
 
         int modelosNum = 0;
 
@@ -40,7 +40,7 @@ namespace Puzzle
         {
             // TODO: Construct any child components here
             this.modelos = modelos;
-            timeSinceLastFrame = 0;
+            timeSinceLastClick = 0;
         }
 
         public override void Initialize()
@@ -110,25 +110,14 @@ namespace Puzzle
             
 
             // TODO: Add your update code here
-            //Seleccion
-            //manipularModelo(seleccionarModelo());
 
-            botonLeft.Update(gameTime, Game.Window.ClientBounds);
-            botonRight.Update(gameTime, Game.Window.ClientBounds);
-            botonUp.Update(gameTime, Game.Window.ClientBounds);
-            botonDown.Update(gameTime, Game.Window.ClientBounds);
-            cuerpo.Update(gameTime, Game.Window.ClientBounds);
-            select.Update(gameTime, Game.Window.ClientBounds);
-
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
+            timeSinceLastClick += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastClick > millisecondsPerClick)
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                
+                timeSinceLastClick -= millisecondsPerClick;
+                manipularModelo(modelos.ElementAt(modeloSeleccionado));
+                botones();
             }
-
-            manipularModelo(modelos.ElementAt(modeloSeleccionado));
-            botones();
 
             base.Update(gameTime);
         }
@@ -255,12 +244,20 @@ namespace Puzzle
                     mouseState.Y > select.GetPosition.Y &&
                     mouseState.Y < select.GetPosition.Y + select.alto)
                 {
-                    //seleccionarModelo();
-                    //figuraCorrecta();
+                    for (int c = modelosNum; c < modelos.Count; c++)
+                    {
+                        modelos.ElementAt(c).preview = true;
+                    }
                 }
             }
             else 
             {
+                for (int c = modelosNum; c < modelos.Count; c++)
+                {
+                    modelos.ElementAt(c).preview = false;
+                }
+
+
                 if (mouseState.X > select.GetPosition.X &&
                     mouseState.X < select.GetPosition.X + select.largo &&
                     mouseState.Y > select.GetPosition.Y &&
@@ -273,23 +270,7 @@ namespace Puzzle
                     //figuraActual();
                 }
             }
-            
-        }
-
-        void figuraCorrecta()
-        {
-            for (int c = modelosNum; c < modelos.Count; c++)
-            {
-                modelos.ElementAt(c).figuraCorrecta();
-            }
-        }
-
-        void figuraActual()
-        {
-            for (int c = modelosNum; c < modelos.Count; c++)
-            {
-                modelos.ElementAt(c).figuraActual();
-            }
+            mantenerEnPantalla();
         }
 
         void ocultarCuerpo()
@@ -302,6 +283,20 @@ namespace Puzzle
             }
             else
                 modelosNum = 0;
+        }
+
+        void mantenerEnPantalla()
+        {
+            if (modelos.ElementAt(modeloSeleccionado).posicionActual.X < -27)
+                modelos.ElementAt(modeloSeleccionado).posicionActual.X = -27;
+            else
+                if (modelos.ElementAt(modeloSeleccionado).posicionActual.X > 27)
+                    modelos.ElementAt(modeloSeleccionado).posicionActual.X = 27;
+            if (modelos.ElementAt(modeloSeleccionado).posicionActual.Y < -15)
+                modelos.ElementAt(modeloSeleccionado).posicionActual.Y = -15;
+            else
+                if (modelos.ElementAt(modeloSeleccionado).posicionActual.Y > 15)
+                    modelos.ElementAt(modeloSeleccionado).posicionActual.Y = 15;
         }
 
     }

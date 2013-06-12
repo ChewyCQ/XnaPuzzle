@@ -15,9 +15,9 @@ with.
 
     <!--
     Size is a float value, measured in points. Modify this value to change
-    the size of the font.
+    the size of the font.   14
     -->
-    <Size>14</Size>
+    <Size>20</Size>
 
     <!--
     Spacing is a float value, measured in pixels. Modify this value to change

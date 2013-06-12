@@ -82,14 +82,16 @@ namespace Puzzle
                         Game.Content.Load<Model>(@"Masculino\CuerpoCompleto"),
                         new Vector3(7.2f, 7.2f, 7.2f) * escala * 2,
                         Vector3.Zero,
-                        new Vector3(0.25f, 38.75f, 7.2f),
+                        new Vector3(0.25f, 38.75f, 7.2f),//38.75
                         "Cuerpo Masculino"));
+                    models.Last().acomodado = true;
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\parte_del_pene2"),
                         new Vector3(0.203f * 7.6f, 0.203f * 7.6f, 0.203f * 7.6f) * escala * 2,
                         new Vector3(270.5f, 0f, 0f),
                         new Vector3(-0.25f, -7.25f, 8.5f),
                         "Miembro"));
+                    models.Last().acomodado = true;
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\conducto deferente der1"),
                         new Vector3(0.03619f * 7.2f, 0.03619f * 7.2f, 0.03619f * 7.2f) * 2f,

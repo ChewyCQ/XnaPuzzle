@@ -81,6 +81,7 @@ namespace Puzzle
             spriteBatch.DrawString(coordenadas, "Coordenadas: " + coord,
                 new Vector2(10, 10), Color.DarkBlue, 0, Vector2.Zero,
                 1, SpriteEffects.None, 1);
+
             //Rotacion
             spriteBatch.DrawString(coordenadas, "Rotacion: " + rot,
                 new Vector2(10, 25), Color.DarkBlue, 0, Vector2.Zero,

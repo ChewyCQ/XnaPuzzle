@@ -51,7 +51,7 @@ namespace Puzzle
 
             //Velocidad del juego, 50 = 20FPS
             //16.6666667 milliseconds = 60FPS
-            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 60);
+            //TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 60);
         }
 
         /// <summary>
@@ -127,26 +127,15 @@ namespace Puzzle
             switch (estado)
             {
                 case estados.seleccion:
-                    try
-                    {
-                        KeyboardState keyboardState = Keyboard.GetState();
-                        if (keyboardState.IsKeyDown(Keys.Left))
-                            masculinoSeleccionado();
-                        if (keyboardState.IsKeyDown(Keys.Right))
-                            femeninooSeleccionado();
-                    }
-                    catch
-                    {
-                    }
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
                         if (mouseState.X > (screenWidth / 2))
                         {
-                            //femeninooSeleccionado();
+                            femeninooSeleccionado();
                         }
                         else
                         {
-                            //masculinoSeleccionado();
+                            masculinoSeleccionado();
                         }
                     }
                     break;
