@@ -18,7 +18,7 @@ namespace Puzzle
 
         public List<BasicModel> modelos;
 
-        int modeloSeleccionado = 0;
+        int modeloSeleccionado = 1;
 
         int timeSinceLastFrame = 0;
         const int millisecondsPerFrame = 50000;
@@ -162,10 +162,15 @@ namespace Puzzle
         void seleccionarModelo()
         {
             modeloSeleccionado++;
+            
+            if (modeloSeleccionado == 0)
+            {
+                modeloSeleccionado = 1;
+            }
 
             if (modeloSeleccionado >= modelos.Count)
             {
-                modeloSeleccionado = 0;
+                modeloSeleccionado = 1;
             }
             fuenteManager.modeloSeleccionado = modeloSeleccionado;
         }
@@ -189,12 +194,13 @@ namespace Puzzle
 
                     if (modeloSeleccionado >= modelos.Count)
                     {
-                        modeloSeleccionado = 0;
+                        modeloSeleccionado = 1;
                     }
                     fuenteManager.modeloSeleccionado = modeloSeleccionado;
                 }
             }
             catch { }
+
 
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
@@ -234,36 +240,40 @@ namespace Puzzle
                     modelos.ElementAt(modeloSeleccionado).moverY(-1);
                 }
 
+                //Ocultar cuerpo
                 if (mouseState.X > cuerpo.GetPosition.X &&
                     mouseState.X < cuerpo.GetPosition.X + cuerpo.largo &&
                     mouseState.Y > cuerpo.GetPosition.Y &&
                     mouseState.Y < cuerpo.GetPosition.Y + cuerpo.alto)
                 {
-                    if (modelosNum == 0)
-                        modelosNum = 1;
-                    else
-                        modelosNum = 0;
+                    ocultarCuerpo();
                 }
 
+                //Botono del fondo
                 if (mouseState.X > select.GetPosition.X &&
                     mouseState.X < select.GetPosition.X + select.largo &&
                     mouseState.Y > select.GetPosition.Y &&
                     mouseState.Y < select.GetPosition.Y + select.alto)
                 {
                     //seleccionarModelo();
-                    figuraCorrecta();
+                    //figuraCorrecta();
                 }
             }
             else 
             {
                 if (mouseState.X > select.GetPosition.X &&
-                                   mouseState.X < select.GetPosition.X + select.largo &&
-                                   mouseState.Y > select.GetPosition.Y &&
-                                   mouseState.Y < select.GetPosition.Y + select.alto)
+                    mouseState.X < select.GetPosition.X + select.largo &&
+                    mouseState.Y > select.GetPosition.Y &&
+                    mouseState.Y < select.GetPosition.Y + select.alto)
                 {
-                    figuraActual();
+                    //figuraCorrecta();
+                }
+                else
+                {
+                    //figuraActual();
                 }
             }
+            
         }
 
         void figuraCorrecta()
@@ -280,6 +290,18 @@ namespace Puzzle
             {
                 modelos.ElementAt(c).figuraActual();
             }
+        }
+
+        void ocultarCuerpo()
+        {
+            if (modelosNum == 0)
+            {
+                modelosNum = 1;
+                if (modelos.ElementAt(1).nombre.Equals("Miembro"))
+                    modelosNum = 2;
+            }
+            else
+                modelosNum = 0;
         }
 
     }

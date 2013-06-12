@@ -18,9 +18,11 @@ namespace Puzzle
 
         public Boolean acomodado = false;
 
+        const float proximity = 2;
+
         //Escala
         public Vector3 escala;
-        const float moveSpeed = 0.05f;
+        const float moveSpeed = 1.0f;
         const float rotacion = 2.5f;
 
         //Rotacion
@@ -78,7 +80,7 @@ namespace Puzzle
             this.rotacionInicial = rot;
             this.posicionCorrecta = posicion;
             this.posicionActual = inicial;
-            this.posicionAuxiliar = posicion;
+            this.posicionAuxiliar = inicial;
 
             worldTranslation = Matrix.Identity;
             worldRotation = Matrix.Identity;
@@ -94,7 +96,7 @@ namespace Puzzle
 
         public virtual void Update()
         {
-            
+            proximidad();
         }
 
         public void Draw(Camera camera)
@@ -205,7 +207,10 @@ namespace Puzzle
         {
             if (!acomodado)
             {
-                //if (po)
+                if (proximidadEnX() && proximidadEnY() && proximidadEnZ())
+                {
+                    posicionActual = posicionCorrecta;
+                }
             }
         }
 
@@ -221,6 +226,33 @@ namespace Puzzle
         public void figuraActual()
         {
             posicionActual = posicionAuxiliar;
+        }
+
+        Boolean proximidadEnX()
+        {
+            if (posicionActual.X - posicionCorrecta.X < proximity &&
+                posicionCorrecta.X - posicionActual.X < proximity)
+                return true;
+            else
+                return false;
+        }
+
+        Boolean proximidadEnY()
+        {
+            if (posicionActual.Y - posicionCorrecta.Y < proximity &&
+                posicionCorrecta.Y - posicionActual.Y < proximity)
+                return true;
+            else
+                return false;
+        }
+
+        Boolean proximidadEnZ()
+        {
+            if (posicionActual.Z - posicionCorrecta.Z < proximity &&
+                posicionCorrecta.Z - posicionActual.Z < proximity)
+                return true;
+            else
+                return false;
         }
 
     }//Class
