@@ -196,7 +196,6 @@ namespace Puzzle
                 {
                     posicionActual = posicionCorrecta;
                     acomodado = true;
-                    moveSpeed = 0;
                 }
             }
         }
@@ -228,9 +227,18 @@ namespace Puzzle
                 return false;
         }
 
-        void rotar(Vector3 vec)
+        Boolean anguloCorrecto()
         {
-            
+            //if (posicionActual.Z - posicionCorrecta.Z < proximity &&
+            //    posicionCorrecta.Z - posicionActual.Z < proximity)
+            //    return true;
+            //else
+            return false;
+        }
+
+        public void rotar(int grados)
+        {
+            rotacionActual.Z += grados;
         }
 
     }//Class

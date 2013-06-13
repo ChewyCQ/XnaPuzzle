@@ -194,13 +194,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Imagenes\Botones\cuerpo.png">
-      <Name>cuerpo</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Imagenes\Botones\select.png">
       <Name>select</Name>
       <Importer>TextureImporter</Importer>

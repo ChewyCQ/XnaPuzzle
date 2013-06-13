@@ -37,6 +37,7 @@ namespace Puzzle
         Sprite cuerpo;
         Sprite preview;
         Sprite visionX;
+        Sprite giroIzq;
 
         FuenteManager fuenteManager;
 
@@ -76,6 +77,8 @@ namespace Puzzle
             Texture2D cuerpoTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/silueta");
             Texture2D previewTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/eye");
             Texture2D vistaXTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/eyeX");
+            Texture2D giroDerTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/giro der");
+            Texture2D giroIzqTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/giro izq");
 
             //Cargar Sprites
             pos += upTextura.Height * escalaFlechas / 4;
@@ -99,8 +102,15 @@ namespace Puzzle
                     pos),
                     escalaFlechas);
             pos += botonDown.alto + 15;
+            //Rotar izq
+            giroIzq = new Sprite(giroIzqTextura,
+                new Vector2((ScreenWidht) - (giroIzqTextura.Width * escalaFlechas * 1.20f),
+                    pos),
+                    escalaFlechas);
+            pos += giroIzq.alto;
+            //Mostrar/Ocultar piel
             cuerpo = new Sprite(cuerpoTextura,
-                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.75f),
+                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.5f),
                     pos),
                     0.5f);
             pos += cuerpo.alto;
@@ -174,6 +184,8 @@ namespace Puzzle
                     cuerpo.Draw(gameTime, spriteBatch);
                     preview.Draw(gameTime, spriteBatch);
                     visionX.Draw(gameTime, spriteBatch);
+                    //giroDer.Draw(gameTime, spriteBatch);
+                    giroIzq.Draw(gameTime, spriteBatch);
             
                     spriteBatch.End();
 
@@ -182,6 +194,14 @@ namespace Puzzle
                     break;
 
                 case Game1.estados.fin:
+                    if (!vistaX)
+                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
+                    for (int c = modelosNum; c < modelos.Count; c++) 
+                    {
+                        modelos.ElementAt(c).Draw(((Game1)Game).camera);
+                    }
+                    fuenteManager.Draw(gameTime);
                     break;
             }
 
@@ -257,7 +277,7 @@ namespace Puzzle
                     ocultarCuerpo();
                 }
 
-                //Botono del fondo
+                //Botono de vista previa
                 if (mouseState.X > preview.GetPosition.X &&
                     mouseState.X < preview.GetPosition.X + preview.largo &&
                     mouseState.Y > preview.GetPosition.Y &&
@@ -280,25 +300,21 @@ namespace Puzzle
                     else
                         vistaX = false;
                 }
+
+                //Botono de giro
+                if (mouseState.X > giroIzq.GetPosition.X &&
+                    mouseState.X < giroIzq.GetPosition.X + giroIzq.largo &&
+                    mouseState.Y > giroIzq.GetPosition.Y &&
+                    mouseState.Y < giroIzq.GetPosition.Y + giroIzq.alto)
+                {
+                    modelos.ElementAt(modeloSeleccionado).rotar(90);
+                }
             }
             else 
             {
                 for (int c = modelosNum; c < modelos.Count; c++)
                 {
                     modelos.ElementAt(c).preview = false;
-                }
-
-
-                if (mouseState.X > preview.GetPosition.X &&
-                    mouseState.X < preview.GetPosition.X + preview.largo &&
-                    mouseState.Y > preview.GetPosition.Y &&
-                    mouseState.Y < preview.GetPosition.Y + preview.alto)
-                {
-                    //figuraCorrecta();
-                }
-                else
-                {
-                    //figuraActual();
                 }
             }
             mantenerEnPantalla();

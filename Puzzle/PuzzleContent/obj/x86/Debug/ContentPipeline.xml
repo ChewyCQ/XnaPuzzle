@@ -414,15 +414,6 @@
       <Time>2013-06-10T05:19:33.0668607-05:00</Time>
     </Item>
     <Item>
-      <Source>Imagenes\Botones\cuerpo.png</Source>
-      <Name>Imagenes\Botones\cuerpo</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Debug\Content\Imagenes\Botones\cuerpo.xnb</Output>
-      <Time>2013-06-10T09:29:09.2949164-05:00</Time>
-    </Item>
-    <Item>
       <Source>Imagenes\Botones\select.png</Source>
       <Name>Imagenes\Botones\select</Name>
       <Importer>TextureImporter</Importer>
