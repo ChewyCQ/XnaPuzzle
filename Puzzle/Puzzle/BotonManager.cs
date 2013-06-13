@@ -126,8 +126,6 @@ namespace Puzzle
                     (float)(screenHeight - (vistaXTextura.Height * 0.75))),
                     0.75f);
 
-            
-
             base.LoadContent();
         }
 
@@ -156,6 +154,7 @@ namespace Puzzle
                     break;
 
                 case Game1.estados.fin:
+                    fuenteManager.Dispose();
                     break;
             }
             

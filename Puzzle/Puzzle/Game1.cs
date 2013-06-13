@@ -31,6 +31,9 @@ namespace Puzzle
         ModelManager modelManager;
         BotonManager botonManager;
 
+        int tiempoEspera = 100;
+        int tiempoPasado = 0;
+
         public Camera camera { get; protected set; }
 
         public Game1()
@@ -127,39 +130,45 @@ namespace Puzzle
             switch (estado)
             {
                 case estados.seleccion:
-                    if (mouseState.LeftButton == ButtonState.Pressed)
+                    tiempoPasado++;
+                    if (tiempoPasado > tiempoEspera) 
                     {
-                        modelManager = null;
-                        botonManager = null;
-                        if (mouseState.X > (screenWidth / 2))
+                        
+                        if (mouseState.LeftButton == ButtonState.Pressed)
                         {
-                            femeninooSeleccionado();
-                        }
-                        else
-                        {
-                            masculinoSeleccionado();
+                            tiempoPasado = 0;
+                            tiempoEspera = 100;
+                            modelManager = null;
+                            botonManager = null;
+                            if (mouseState.X > (screenWidth / 2))
+                            {
+                                femeninooSeleccionado();
+                            }
+                            else
+                            {
+                                masculinoSeleccionado();
+                            }
                         }
                     }
+                    
                     break;
                 case estados.juego:
                     if (botonManager.estado == estados.fin)
                         estado = estados.fin;
                     break;
                 case estados.fin:
-                    
-                    if (mouseState.LeftButton == ButtonState.Pressed)
-                    {
-                        estado = estados.seleccion;
-                        botonManager.estado = estados.seleccion;
-                        modelManager.estado = estados.seleccion;
-                        spriteManager.Enabled = true;
-                        spriteManager.Visible = true;
-                        int time = 230;
-                        while (time > 0)
+                    tiempoPasado++;
+                    if (tiempoPasado > tiempoEspera*2)
+                        if (mouseState.LeftButton == ButtonState.Pressed)
                         {
-                            time--;
+                            estado = estados.seleccion;
+                            botonManager.estado = estados.seleccion;
+                            modelManager.estado = estados.seleccion;
+                            spriteManager.Enabled = true;
+                            spriteManager.Visible = true;
+                            tiempoPasado = 0;
+                            tiempoEspera = 10;
                         }
-                    }
                     break;
             }
             base.Update(gameTime);

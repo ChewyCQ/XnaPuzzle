@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Imagenes\Seleccion\El.png</Source>
+      <Name>Imagenes\Seleccion\El</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Seleccion\El.xnb</Output>
+      <Time>2013-06-03T03:17:45.5206401-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Seleccion\Ella.png</Source>
+      <Name>Imagenes\Seleccion\Ella</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Seleccion\Ella.xnb</Output>
+      <Time>2013-06-03T03:17:45.5246403-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\redo.png</Source>
+      <Name>Imagenes\Botones\redo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\redo.xnb</Output>
+      <Time>2013-06-03T05:00:28.2301269-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\down.png</Source>
+      <Name>Imagenes\Botones\down</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\down.xnb</Output>
+      <Time>2013-06-10T05:19:33.05386-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\left.png</Source>
+      <Name>Imagenes\Botones\left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\left.xnb</Output>
+      <Time>2013-06-10T05:19:33.0328588-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\right.png</Source>
+      <Name>Imagenes\Botones\right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\right.xnb</Output>
+      <Time>2013-06-10T05:19:33.0438594-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\up.png</Source>
+      <Name>Imagenes\Botones\up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\up.xnb</Output>
+      <Time>2013-06-10T05:19:33.0668607-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\select.png</Source>
+      <Name>Imagenes\Botones\select</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\select.xnb</Output>
+      <Time>2013-06-10T10:17:44.7266695-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\eye.png</Source>
+      <Name>Imagenes\Botones\eye</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\eye.xnb</Output>
+      <Time>2013-06-12T01:53:01.3558103-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\silueta.png</Source>
+      <Name>Imagenes\Botones\silueta</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\silueta.xnb</Output>
+      <Time>2013-06-12T09:41:23.0397266-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\eyeX.png</Source>
+      <Name>Imagenes\Botones\eyeX</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\eyeX.xnb</Output>
+      <Time>2013-06-12T14:05:08.8543745-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\giro der.png</Source>
+      <Name>Imagenes\Botones\giro der</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\giro der.xnb</Output>
+      <Time>2013-06-12T14:05:08.8443744-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Imagenes\Botones\giro izq.png</Source>
+      <Name>Imagenes\Botones\giro izq</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Imagenes\Botones\giro izq.xnb</Output>
+      <Time>2013-06-12T14:05:08.8443744-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Cuerpo.fbx</Source>
+      <Name>Femenino\Cuerpo</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Cuerpo.xnb</Output>
+      <Time>2013-06-05T09:19:30.4713835-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Cuerpo_0.xml</Key>
+        <Value>2013-06-13T12:49:28.1978848-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Ovario derecho.fbx</Source>
+      <Name>Femenino\Ovario derecho</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Ovario derecho.xnb</Output>
+      <Time>2013-06-05T09:19:30.7113838-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Ovario derecho_0.xml</Key>
+        <Value>2013-06-13T12:49:39.2725182-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Ovario izquierdo.fbx</Source>
+      <Name>Femenino\Ovario izquierdo</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Ovario izquierdo.xnb</Output>
+      <Time>2013-06-05T09:19:31.1913845-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Ovario izquierdo_0.xml</Key>
+        <Value>2013-06-13T12:49:54.9014121-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Vejiga.fbx</Source>
+      <Name>Femenino\Vejiga</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Vejiga.xnb</Output>
+      <Time>2013-06-05T09:19:32.1213857-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Vejiga_0.xml</Key>
+        <Value>2013-06-13T12:50:17.7137169-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Útero.fbx</Source>
+      <Name>Femenino\Útero</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Útero.xnb</Output>
+      <Time>2013-06-05T09:19:31.4613848-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\tero_0.xml</Key>
+        <Value>2013-06-13T12:50:26.2282039-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Vagina2.fbx</Source>
+      <Name>Femenino\Vagina2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Vagina2.xnb</Output>
+      <Time>2013-06-07T12:47:26.4013252-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Vagina2_0.xml</Key>
+        <Value>2013-06-13T12:50:27.5662805-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Uretra2.fbx</Source>
+      <Name>Femenino\Uretra2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Uretra2.xnb</Output>
+      <Time>2013-06-09T03:01:54.3655637-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Uretra2_0.xml</Key>
+        <Value>2013-06-13T12:50:28.1433135-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\CuerpoCompleto.fbx</Source>
+      <Name>Masculino\CuerpoCompleto</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\CuerpoCompleto.xnb</Output>
+      <Time>2013-06-08T18:24:57.4674986-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\CuerpoCompleto_0.xml</Key>
+        <Value>2013-06-13T12:50:31.3994997-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\testiculo derecho.fbx</Source>
+      <Name>Masculino\testiculo derecho</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\testiculo derecho.xnb</Output>
+      <Time>2013-06-09T20:14:03.3478278-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\testiculo derecho_0.xml</Key>
+        <Value>2013-06-13T12:50:37.4388452-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Izquierda2.fbx</Source>
+      <Name>Femenino\Trompa de Falopio Izquierda2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Trompa de Falopio Izquierda2.xnb</Output>
+      <Time>2013-06-09T04:34:27.7682002-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Trompa de Falopio Izquierda2_0.xml</Key>
+        <Value>2013-06-13T12:50:39.1359422-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Derecha2.fbx</Source>
+      <Name>Femenino\Trompa de Falopio Derecha2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Femenino\Trompa de Falopio Derecha2.xnb</Output>
+      <Time>2013-06-09T03:54:15.1772079-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Femenino\Trompa de Falopio Derecha2_0.xml</Key>
+        <Value>2013-06-13T12:50:40.1349994-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\parte_del_pene2.fbx</Source>
+      <Name>Masculino\parte_del_pene2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\parte_del_pene2.xnb</Output>
+      <Time>2013-06-09T18:02:33.5065547-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\parte_del_pene2_0.xml</Key>
+        <Value>2013-06-13T12:50:46.5533665-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\conducto deferente der1.fbx</Source>
+      <Name>Masculino\conducto deferente der1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\conducto deferente der1.xnb</Output>
+      <Time>2013-06-09T23:20:07.9364058-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\conducto deferente der1_0.xml</Key>
+        <Value>2013-06-13T12:50:48.7674931-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\prostata.fbx</Source>
+      <Name>Masculino\prostata</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\prostata.xnb</Output>
+      <Time>2013-06-10T04:18:50.4275136-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\prostata_0.xml</Key>
+        <Value>2013-06-13T12:50:50.1755736-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\conducto deferente izq.fbx</Source>
+      <Name>Masculino\conducto deferente izq</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\conducto deferente izq.xnb</Output>
+      <Time>2013-06-10T04:09:18.1467811-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\conducto deferente izq_0.xml</Key>
+        <Value>2013-06-13T12:50:51.9946777-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\tejido erectil.fbx</Source>
+      <Name>Masculino\tejido erectil</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\tejido erectil.xnb</Output>
+      <Time>2013-06-10T21:29:52.2125114-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\tejido erectil_0.xml</Key>
+        <Value>2013-06-13T12:50:52.3716993-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\uretra.fbx</Source>
+      <Name>Masculino\uretra</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\uretra.xnb</Output>
+      <Time>2013-06-10T20:41:23.4461395-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\uretra_0.xml</Key>
+        <Value>2013-06-13T12:50:52.7547212-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Masculino\vejiga.fbx</Source>
+      <Name>Masculino\vejiga</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Masculino\vejiga.xnb</Output>
+      <Time>2013-06-10T22:01:16.4322826-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Masculino\vejiga_0.xml</Key>
+        <Value>2013-06-13T12:50:55.8418977-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Fonts\Fuente.spritefont</Source>
+      <Name>Fonts\Fuente</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\Fonts\Fuente.xnb</Output>
+      <Time>2013-06-12T22:52:22.4476421-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Cuerpo.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Cuerpo_0.xml</Output>
+      <Time>2013-06-05T09:19:30.4713835-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Ovario derecho.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Ovario derecho_0.xml</Output>
+      <Time>2013-06-05T09:19:30.7113838-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Ovario izquierdo.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Ovario izquierdo_0.xml</Output>
+      <Time>2013-06-05T09:19:31.1913845-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Vejiga.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Vejiga_0.xml</Output>
+      <Time>2013-06-05T09:19:32.1213857-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Útero.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\tero_0.xml</Output>
+      <Time>2013-06-05T09:19:31.4613848-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Vagina2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Vagina2_0.xml</Output>
+      <Time>2013-06-07T12:47:26.4013252-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Uretra2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Uretra2_0.xml</Output>
+      <Time>2013-06-09T03:01:54.3655637-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\CuerpoCompleto.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\CuerpoCompleto_0.xml</Output>
+      <Time>2013-06-08T18:24:57.4674986-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\testiculo derecho.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\testiculo derecho_0.xml</Output>
+      <Time>2013-06-09T20:14:03.3478278-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Izquierda2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Trompa de Falopio Izquierda2_0.xml</Output>
+      <Time>2013-06-09T04:34:27.7682002-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Femenino\Trompa de Falopio Derecha2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Femenino\Trompa de Falopio Derecha2_0.xml</Output>
+      <Time>2013-06-09T03:54:15.1772079-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\parte_del_pene2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\parte_del_pene2_0.xml</Output>
+      <Time>2013-06-09T18:02:33.5065547-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\conducto deferente der1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\conducto deferente der1_0.xml</Output>
+      <Time>2013-06-09T23:20:07.9364058-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\prostata.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\prostata_0.xml</Output>
+      <Time>2013-06-10T04:18:50.4275136-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\conducto deferente izq.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\conducto deferente izq_0.xml</Output>
+      <Time>2013-06-10T04:09:18.1467811-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\tejido erectil.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\tejido erectil_0.xml</Output>
+      <Time>2013-06-10T21:29:52.2125114-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\uretra.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\uretra_0.xml</Output>
+      <Time>2013-06-10T20:41:23.4461395-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Masculino\vejiga.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Masculino\vejiga_0.xml</Output>
+      <Time>2013-06-10T22:01:16.4322826-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\PuzzleContent\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\David\Documents\Visual Studio 2010\Projects\Puzzle\Puzzle\Puzzle\bin\x86\Release\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-05-18T22:59:04.3969451-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
