@@ -228,5 +228,10 @@ namespace Puzzle
                 return false;
         }
 
+        void rotar(Vector3 vec)
+        {
+            
+        }
+
     }//Class
 }//NAMESPACE

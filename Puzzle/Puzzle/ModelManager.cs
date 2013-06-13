@@ -93,6 +93,13 @@ namespace Puzzle
                         "Miembro"));
                     models.Last().acomodado = true;
                     models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Masculino\prostata"),
+                        new Vector3(0.202f * 7.2f, 0.202f * 7.2f, 0.202f * 7.2f) * 2f,
+                        new Vector3(90f, 90f, 0f),
+                        new Vector3(0, 3.25f, 3.75f),
+                        new Vector3(-23f, -10, 3.75f),
+                        "Prostata"));
+                    models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\conducto deferente der1"),
                         new Vector3(0.03619f * 7.2f, 0.03619f * 7.2f, 0.03619f * 7.2f) * 2f,
                         new Vector3(3.97f, 176.6f, 88.669f),//8.97f, 171.6f, 91.169f
@@ -120,13 +127,7 @@ namespace Puzzle
                         new Vector3(-2.55f, -7.4f, 8.5f),
                         new Vector3(-26f, -10, 8.5f),
                         "Testiculo izquierdo"));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Masculino\prostata"),
-                        new Vector3(0.202f * 7.2f, 0.202f * 7.2f, 0.202f * 7.2f) * 2f,
-                        new Vector3(90f,90f,0f),
-                        new Vector3(0, 3.25f, 3.75f),
-                        new Vector3(-23f, -10, 3.75f),
-                        "Prostata"));
+                    
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\uretra"),
                         new Vector3(0.108f * 7.2f, 0.108f * 7.2f, 0.108f * 7.2f) * 2f,
@@ -172,13 +173,6 @@ namespace Puzzle
                         new Vector3(-23, -7.75f, 7F),
                         "Utero"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Vejiga"),
-                        new Vector3(1.178f, 1.178f, 1.178f) * escala * 2,
-                        new Vector3(270, 0, 0),
-                        new Vector3(-1f, -1.25f, 7f),
-                        new Vector3(21f, 5.25f, 7f),
-                        "Vejiga"));
-                    models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Vagina2"),
                         new Vector3(1f, 1f, 1f) * escala,//1f, 1f, 0.766f
                         new Vector3(270f, 60f, 0f),
@@ -186,19 +180,12 @@ namespace Puzzle
                         new Vector3(23.25f, 15f, 4f),
                         "Vagina"));
                     models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Ovario derecho"),
-                        new Vector3(2.61f, 1.92f, 1.959f) * escala,
-                        new Vector3(0f, 90f, 0f),
-                        new Vector3(6.75f, 7.75f, 5.25f),
-                        new Vector3(-28f, -14.5f, 4f),
-                        "Ovario derecho"));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"),
-                        new Vector3(2.610f, 1.920f, 1.959f) * escala,
-                        new Vector3(0f, 90f, 0f),
-                        new Vector3(-6f, 8f, 5f),
-                        new Vector3(-25f, 0f, 5f),
-                        "Ovario izquierdo"));
+                        Game.Content.Load<Model>(@"Femenino\Vejiga"),
+                        new Vector3(1.178f, 1.178f, 1.178f) * escala * 2,
+                        new Vector3(270, 0, 0),
+                        new Vector3(-1f, -1.25f, 7f),
+                        new Vector3(21f, 5.25f, 7f),
+                        "Vejiga"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha2"),
                         new Vector3(0.691f, 0.640f, 0.691f) * escala,
@@ -213,6 +200,20 @@ namespace Puzzle
                         new Vector3(-4.5f, 7.25f, 8.5f),
                         new Vector3(23.75f, -10.25f, 8.5f),
                         "Trompa de Falopio Izquierda"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Ovario derecho"),
+                        new Vector3(2.61f, 1.92f, 1.959f) * escala,
+                        new Vector3(0f, 90f, 0f),
+                        new Vector3(6.75f, 7.75f, 5.25f),
+                        new Vector3(-28f, -14.5f, 4f),
+                        "Ovario derecho"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Ovario izquierdo"),
+                        new Vector3(2.610f, 1.920f, 1.959f) * escala,
+                        new Vector3(0f, 90f, 0f),
+                        new Vector3(-6f, 8f, 5f),
+                        new Vector3(-25f, 0f, 5f),
+                        "Ovario izquierdo"));
                     break;
 
                 default:

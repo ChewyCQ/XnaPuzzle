@@ -30,6 +30,9 @@ namespace Puzzle
         int segundos = -1;
         float milisegundos = 0f;
 
+        int screenHeight;
+        int screenWidth;
+
         public int modeloSeleccionado = 2;
 
         public List<BasicModel> modelos;
@@ -40,11 +43,13 @@ namespace Puzzle
             // TODO: Construct any child components here
         }
 
-        public FuenteManager(Game game, List<BasicModel> modelos)
+        public FuenteManager(Game game, List<BasicModel> modelos, int screenHeight, int screenWidht)
             : base(game)
         {
             // TODO: Construct any child components here
             this.modelos = modelos;
+            this.screenHeight = screenHeight;
+            this.screenWidth = screenWidht;
         }
         
         public override void Initialize()
@@ -86,6 +91,7 @@ namespace Puzzle
                 " Y:" +  modelos.ElementAt(modeloSeleccionado).rotacionActual.Y +
                 " Z:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.Z + "}";
             nombre = modelos.ElementAt(modeloSeleccionado).nombre;
+            
 
             base.Update(gameTime);
         }
@@ -95,18 +101,18 @@ namespace Puzzle
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
             //Coordenadas
-            spriteBatch.DrawString(coordenadas, "Coordenadas: " + coord,
-                new Vector2(10, 10), Color.DarkBlue, 0, Vector2.Zero,
-                1, SpriteEffects.None, 1);
+            //spriteBatch.DrawString(coordenadas, "Coordenadas: " + coord,
+            //    new Vector2(10, 10), Color.DarkBlue, 0, Vector2.Zero,
+            //    1, SpriteEffects.None, 1);
 
             //Rotacion
-            spriteBatch.DrawString(coordenadas, "Tiempo: "+ minutos+ "' " + segundos + "\"",
+            spriteBatch.DrawString(coordenadas, "Tiempo: "+ minutos+ ":" + segundos,
                 new Vector2(10, 30), Color.DarkBlue, 0, Vector2.Zero,
                 1, SpriteEffects.None, 1);
 
             //Rotacion
             spriteBatch.DrawString(coordenadas, nombre,
-                new Vector2(10, 50), Color.DarkBlue, 0, Vector2.Zero,
+                new Vector2(screenWidth/2 - nombre.Length * 7, 50), Color.DarkBlue, 0, Vector2.Zero,
                 1, SpriteEffects.None, 1);
 
             spriteBatch.End();

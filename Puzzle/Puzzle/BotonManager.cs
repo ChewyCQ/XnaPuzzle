@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-
 namespace Puzzle
 {
     public class BotonManager : Microsoft.Xna.Framework.DrawableGameComponent
@@ -25,6 +24,8 @@ namespace Puzzle
 
         int modelosNum = 0;
 
+        Boolean vistaX = false;
+
         //Botones
         Sprite botonLeft;
         Sprite botonRight;
@@ -32,6 +33,7 @@ namespace Puzzle
         Sprite botonDown;
         Sprite cuerpo;
         Sprite preview;
+        Sprite visionX;
 
         FuenteManager fuenteManager;
 
@@ -69,9 +71,10 @@ namespace Puzzle
             Texture2D downTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/down");
             Texture2D cuerpoTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/silueta");
             Texture2D previewTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/eye");
+            Texture2D vistaXTextura = Game.Content.Load<Texture2D>(@"Imagenes/Botones/eyeX");
 
             //Cargar Sprites
-            pos += upTextura.Height * escalaFlechas;
+            pos += upTextura.Height * escalaFlechas / 4;
             botonUp = new Sprite(upTextura,
                 new Vector2((ScreenWidht) - (upTextura.Width * escalaFlechas * 1.75f),
                     pos),
@@ -91,18 +94,21 @@ namespace Puzzle
                 new Vector2((ScreenWidht) - (downTextura.Width * escalaFlechas * 1.75f),
                     pos),
                     escalaFlechas);
-            pos += botonDown.alto;
+            pos += botonDown.alto + 15;
             cuerpo = new Sprite(cuerpoTextura,
-                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.25f),
+                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.75f),
                     pos),
-                    0.25f);
+                    0.5f);
             pos += cuerpo.alto;
             preview = new Sprite(previewTextura,
                 new Vector2(0,
                     (float)(ScreenHeight - (previewTextura.Height * 0.75))),
                     0.75f);
-
-            fuenteManager = new FuenteManager(Game, modelos);
+            visionX = new Sprite(vistaXTextura,
+                new Vector2(ScreenWidht - vistaXTextura.Width,
+                    (float)(ScreenHeight - (vistaXTextura.Height * 0.75))),
+                    0.75f);
+            fuenteManager = new FuenteManager(Game, modelos, ScreenHeight, ScreenWidht);
             Game.Components.Add(fuenteManager);
 
             base.LoadContent();
@@ -129,7 +135,8 @@ namespace Puzzle
 
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            if (!vistaX)
+                GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
             for (int c = modelosNum; c < modelos.Count; c++) 
             {
@@ -144,6 +151,7 @@ namespace Puzzle
             botonDown.Draw(gameTime, spriteBatch);
             cuerpo.Draw(gameTime, spriteBatch);
             preview.Draw(gameTime, spriteBatch);
+            visionX.Draw(gameTime, spriteBatch);
             
             spriteBatch.End();
 
@@ -174,24 +182,6 @@ namespace Puzzle
         void botones()
         {
             MouseState mouseState = Mouse.GetState();
-
-            try 
-            {
-                KeyboardState keyboardState = Keyboard.GetState();
-                if (keyboardState.IsKeyDown(Keys.O))
-                {
-                    seleccionarModelo();
-                    //modeloSeleccionado++;
-
-                    //if (modeloSeleccionado >= modelos.Count)
-                    //{
-                    //    modeloSeleccionado = 1;
-                    //}
-                    //fuenteManager.modeloSeleccionado = modeloSeleccionado;
-                }
-            }
-            catch { }
-
 
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
@@ -250,6 +240,18 @@ namespace Puzzle
                     {
                         modelos.ElementAt(c).preview = true;
                     }
+                }
+
+                //Vision X
+                if (mouseState.X > visionX.GetPosition.X &&
+                    mouseState.X < visionX.GetPosition.X + visionX.largo &&
+                    mouseState.Y > visionX.GetPosition.Y &&
+                    mouseState.Y < visionX.GetPosition.Y + visionX.alto)
+                {
+                    if (!vistaX)
+                        vistaX = true;
+                    else
+                        vistaX = false;
                 }
             }
             else 
@@ -311,6 +313,5 @@ namespace Puzzle
             Game.Exit();
             return true;
         }
-
     }
 }

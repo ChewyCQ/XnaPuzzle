@@ -28,3 +28,6 @@ Content\Imagenes\Botones\select.xnb
 Content\Masculino\tejido erectil.xnb
 Content\Imagenes\Botones\eye.xnb
 Content\Imagenes\Botones\silueta.xnb
+Content\Imagenes\Botones\eyeX.xnb
+Content\Imagenes\Botones\giro der.xnb
+Content\Imagenes\Botones\giro izq.xnb
