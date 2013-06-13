@@ -35,12 +35,18 @@ namespace Puzzle
 
         public int modeloSeleccionado = 2;
 
+        public Game1.estados estado;
+
         public List<BasicModel> modelos;
+
+        Vector2 posicionTiempo;
 
         public FuenteManager(Game game)
             : base(game)
         {
             // TODO: Construct any child components here
+            estado = Game1.estados.juego;
+            posicionTiempo = new Vector2(10,10);
         }
 
         public FuenteManager(Game game, List<BasicModel> modelos, int screenHeight, int screenWidht)
@@ -50,6 +56,7 @@ namespace Puzzle
             this.modelos = modelos;
             this.screenHeight = screenHeight;
             this.screenWidth = screenWidht;
+            estado = Game1.estados.juego;
         }
         
         public override void Initialize()
@@ -73,49 +80,74 @@ namespace Puzzle
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            milisegundos += 17.85f;
-
-            if (milisegundos > 1000)
+            switch (estado)
             {
-                milisegundos -= 1000;
-                segundos++;
-                if (segundos > 60)
-                {
-                    minutos++;
-                    segundos = 0;
-                }
-            }
+                case Game1.estados.seleccion:
+                    break;
+                case Game1.estados.juego:
+                    milisegundos += 17.85f;
 
-            coord = modelos.ElementAt(modeloSeleccionado).posicionActual.ToString();
-            rot = "{X:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.X + 
-                " Y:" +  modelos.ElementAt(modeloSeleccionado).rotacionActual.Y +
-                " Z:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.Z + "}";
-            nombre = modelos.ElementAt(modeloSeleccionado).nombre;
-            
+                    if (milisegundos > 1000)
+                    {
+                        milisegundos -= 1000;
+                        segundos++;
+                        if (segundos > 60)
+                        {
+                            minutos++;
+                            segundos = 0;
+                        }
+                    }
+
+                    coord = modelos.ElementAt(modeloSeleccionado).posicionActual.ToString();
+                    rot = "{X:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.X + 
+                        " Y:" +  modelos.ElementAt(modeloSeleccionado).rotacionActual.Y +
+                        " Z:" + modelos.ElementAt(modeloSeleccionado).rotacionActual.Z + "}";
+                    nombre = modelos.ElementAt(modeloSeleccionado).nombre;
+                    break;
+                case Game1.estados.fin:
+                    //posicionTiempo = new Vector2(screenWidth / 2 - nombre.Length * 7, 50);
+                    break;
+            }
 
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+            switch (estado)
+            {
+                case Game1.estados.seleccion:
+                    break;
+                case Game1.estados.juego:
+                    spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
-            //Coordenadas
-            //spriteBatch.DrawString(coordenadas, "Coordenadas: " + coord,
-            //    new Vector2(10, 10), Color.DarkBlue, 0, Vector2.Zero,
-            //    1, SpriteEffects.None, 1);
+                    //Coordenadas
+                    //spriteBatch.DrawString(coordenadas, "Coordenadas: " + coord,
+                    //    new Vector2(10, 10), Color.DarkBlue, 0, Vector2.Zero,
+                    //    1, SpriteEffects.None, 1);
 
-            //Rotacion
-            spriteBatch.DrawString(coordenadas, "Tiempo: "+ minutos+ ":" + segundos,
-                new Vector2(10, 30), Color.DarkBlue, 0, Vector2.Zero,
-                1, SpriteEffects.None, 1);
+                    //Tiempo
+                    spriteBatch.DrawString(coordenadas, "Tiempo: "+ minutos+ ":" + segundos,
+                        new Vector2(10,10), Color.DarkBlue, 0, Vector2.Zero,
+                        1, SpriteEffects.None, 1);
 
-            //Rotacion
-            spriteBatch.DrawString(coordenadas, nombre,
-                new Vector2(screenWidth/2 - nombre.Length * 7, 50), Color.DarkBlue, 0, Vector2.Zero,
-                1, SpriteEffects.None, 1);
+                    //Nombre organo
+                    spriteBatch.DrawString(coordenadas, nombre,
+                        new Vector2(screenWidth/2 - nombre.Length * 7, 50), Color.DarkBlue, 0, Vector2.Zero,
+                        1, SpriteEffects.None, 1);
 
-            spriteBatch.End();
+                    spriteBatch.End();
+                    break;
+                case Game1.estados.fin:
+                    spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+
+                    spriteBatch.DrawString(coordenadas, "Tiempo: " + minutos + ":" + segundos,
+                        new Vector2(screenWidth / 2 - nombre.Length * 7, screenHeight/2), Color.DarkBlue, 0, Vector2.Zero,
+                        1, SpriteEffects.None, 1);
+
+                    spriteBatch.End();
+                    break;
+            }
 
             base.Draw(gameTime);
         }

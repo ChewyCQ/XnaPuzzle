@@ -26,6 +26,9 @@ namespace Puzzle
 
         Boolean vistaX = false;
 
+        //public enum estados{ seleccion, juego, fin};
+        public Game1.estados estado;
+
         //Botones
         Sprite botonLeft;
         Sprite botonRight;
@@ -43,6 +46,7 @@ namespace Puzzle
             // TODO: Construct any child components here
             this.modelos = modelos;
             timeSinceLastClick = 0;
+            estado = Game1.estados.juego;
         }
 
         public override void Initialize()
@@ -117,46 +121,69 @@ namespace Puzzle
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            todosAcomodados();
-
-            if (modelos.ElementAt(modeloSeleccionado).acomodado)
-                seleccionarModelo();
-
-            timeSinceLastClick += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastClick > millisecondsPerClick)
+            switch (estado)
             {
-                timeSinceLastClick -= millisecondsPerClick;
-                manipularModelo(modelos.ElementAt(modeloSeleccionado));
-                botones();
+                case Game1.estados.seleccion:
+                    break;
+
+                case Game1.estados.juego:
+                    todosAcomodados();
+
+                    if (modelos.ElementAt(modeloSeleccionado).acomodado)
+                        seleccionarModelo();
+
+                    timeSinceLastClick += gameTime.ElapsedGameTime.Milliseconds;
+                    if (timeSinceLastClick > millisecondsPerClick)
+                    {
+                        timeSinceLastClick -= millisecondsPerClick;
+                        manipularModelo(modelos.ElementAt(modeloSeleccionado));
+                        botones();
+                    }
+                    break;
+
+                case Game1.estados.fin:
+                    break;
             }
+            
 
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            if (!vistaX)
-                GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-
-            for (int c = modelosNum; c < modelos.Count; c++) 
+            switch (estado)
             {
-                modelos.ElementAt(c).Draw(((Game1)Game).camera);
-            }
+                case Game1.estados.seleccion:
+                    break;
 
-            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+                case Game1.estados.juego:
+                    if (!vistaX)
+                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-            botonLeft.Draw(gameTime, spriteBatch);
-            botonRight.Draw(gameTime, spriteBatch);
-            botonUp.Draw(gameTime, spriteBatch);
-            botonDown.Draw(gameTime, spriteBatch);
-            cuerpo.Draw(gameTime, spriteBatch);
-            preview.Draw(gameTime, spriteBatch);
-            visionX.Draw(gameTime, spriteBatch);
+                    for (int c = modelosNum; c < modelos.Count; c++) 
+                    {
+                        modelos.ElementAt(c).Draw(((Game1)Game).camera);
+                    }
+
+                    spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+
+                    botonLeft.Draw(gameTime, spriteBatch);
+                    botonRight.Draw(gameTime, spriteBatch);
+                    botonUp.Draw(gameTime, spriteBatch);
+                    botonDown.Draw(gameTime, spriteBatch);
+                    cuerpo.Draw(gameTime, spriteBatch);
+                    preview.Draw(gameTime, spriteBatch);
+                    visionX.Draw(gameTime, spriteBatch);
             
-            spriteBatch.End();
+                    spriteBatch.End();
 
-            //Dibuja el texto sobre lo demas
-            fuenteManager.Draw(gameTime);
+                    //Dibuja el texto sobre lo demas
+                    fuenteManager.Draw(gameTime);
+                    break;
+
+                case Game1.estados.fin:
+                    break;
+            }
 
             base.Draw(gameTime);
         }
@@ -310,7 +337,8 @@ namespace Puzzle
                 if (!model.acomodado)
                     return false;
             }
-            Game.Exit();
+            estado = Game1.estados.fin;
+            fuenteManager.estado = Game1.estados.fin;
             return true;
         }
     }

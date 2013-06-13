@@ -23,8 +23,8 @@ namespace Puzzle
         public int screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         public int screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
-        enum estados{ seleccion, juego, fin};
-        estados estado = estados.seleccion;
+        public enum estados{ seleccion, juego, fin};
+        public estados estado = estados.seleccion;
 
         //Componentes
         SpriteManager spriteManager;
@@ -140,8 +140,10 @@ namespace Puzzle
                     }
                     break;
                 case estados.juego:
+                    
                     break;
                 case estados.fin:
+
                     break;
             }
 

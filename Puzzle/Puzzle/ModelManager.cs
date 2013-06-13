@@ -29,6 +29,8 @@ namespace Puzzle
         int screenHeight;
         int screenWidth;
 
+        Game1.estados estado;
+
         public ModelManager(Game game, sexo sex)
             : base(game)
         {
@@ -158,6 +160,7 @@ namespace Puzzle
                         Vector3.Zero,
                         new Vector3(0, -7.5f, .2f),
                         "Cuerpo"));
+                    
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Uretra2"),
                         new Vector3(5.051f, 6.782f, 5.316f) * escala,//escala
@@ -165,6 +168,7 @@ namespace Puzzle
                         new Vector3(0f, -4.25f, 7f),//posicion
                         new Vector3(-29f, 10.25f, 7f),//posicion inicial
                         "Uretra"));
+                    
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Útero"),
                         new Vector3(5.028f, 4.260f, 4.268f) * escala,
@@ -179,6 +183,7 @@ namespace Puzzle
                         new Vector3(1.25f, -1.5f, 4f),
                         new Vector3(23.25f, 15f, 4f),
                         "Vagina"));
+                    
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Vejiga"),
                         new Vector3(1.178f, 1.178f, 1.178f) * escala * 2,
@@ -186,20 +191,6 @@ namespace Puzzle
                         new Vector3(-1f, -1.25f, 7f),
                         new Vector3(21f, 5.25f, 7f),
                         "Vejiga"));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha2"),
-                        new Vector3(0.691f, 0.640f, 0.691f) * escala,
-                        new Vector3(310f, 10f, 0f),
-                        new Vector3(4.75f, 6.75f, 8.5f),
-                        new Vector3(23.75f, -5.75f, 8.5f),
-                        "Trompa de Falopio Derecha"));
-                    models.Add(new BasicModel(
-                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda2"),
-                        new Vector3(0.691f, 0.640f, 0.691f) * escala,
-                        new Vector3(200f, 247.5f, 65f),
-                        new Vector3(-4.5f, 7.25f, 8.5f),
-                        new Vector3(23.75f, -10.25f, 8.5f),
-                        "Trompa de Falopio Izquierda"));
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Femenino\Ovario derecho"),
                         new Vector3(2.61f, 1.92f, 1.959f) * escala,
@@ -214,6 +205,21 @@ namespace Puzzle
                         new Vector3(-6f, 8f, 5f),
                         new Vector3(-25f, 0f, 5f),
                         "Ovario izquierdo"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Derecha2"),
+                        new Vector3(0.691f, 0.640f, 0.691f) * escala,
+                        new Vector3(310f, 10f, 0f),
+                        new Vector3(4.75f, 6.75f, 8.5f),
+                        new Vector3(23.75f, -5.75f, 8.5f),
+                        "Trompa de Falopio Derecha"));
+                    models.Add(new BasicModel(
+                        Game.Content.Load<Model>(@"Femenino\Trompa de Falopio Izquierda2"),
+                        new Vector3(0.691f, 0.640f, 0.691f) * escala,
+                        new Vector3(200f, 247.5f, 65f),
+                        new Vector3(-4.5f, 7.25f, 8.5f),
+                        new Vector3(23.75f, -10.25f, 8.5f),
+                        "Trompa de Falopio Izquierda"));
+                    
                     break;
 
                 default:
@@ -230,6 +236,17 @@ namespace Puzzle
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            switch (estado)
+            {
+                case Game1.estados.seleccion:
+                    break;
+
+                case Game1.estados.juego:
+                    break;
+
+                case Game1.estados.fin:
+                    break;
+            }
 
             // Loop through all models and call Update
             for (int i = 0; i < models.Count; ++i)
