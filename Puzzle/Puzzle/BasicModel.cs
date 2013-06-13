@@ -24,7 +24,6 @@ namespace Puzzle
 
         //Rotacion
         public Vector3 rotacionCorrecta = new Vector3(0,0,0);
-        public Vector3 rotacionInicial = new Vector3(0, 0, 0);
         public Vector3 rotacionActual = new Vector3(0,0,0);
 
         //Coordenadas
@@ -51,24 +50,23 @@ namespace Puzzle
         {
             model = m;
             this.escala = scale;
-            this.rotacionInicial = rot;
             this.posicionCorrecta = posicion;
             this.posicionActual = posicion;
-            rotacionActual = new Vector3(rot.X,rot.Y, rot.Z);
+            this.rotacionActual = rot;
             
             this.nombre = nombre;
         }
 
         //Constructor que inicia desacomodado
-        public BasicModel(Model m, Vector3 scale, Vector3 rot, Vector3 posicion, Vector3 inicial, String nombre)
+        public BasicModel(Model m, Vector3 scale, Vector3 rotacionCorrecta, Vector3 rotacionInicial,
+            Vector3 posicionCorrecta, Vector3 posicionInicial, String nombre)
         {
             model = m;
             this.escala = scale;
-            this.rotacionInicial = rot;
-            this.posicionCorrecta = posicion;
-            this.posicionActual = inicial;
-            
-            rotacionActual = new Vector3(rot.X, rot.Y, rot.Z);
+            this.rotacionActual = rotacionInicial;
+            this.rotacionCorrecta = rotacionCorrecta;
+            this.posicionCorrecta = posicionCorrecta;
+            this.posicionActual = posicionInicial;
             
             this.nombre = nombre;
         }
@@ -107,9 +105,9 @@ namespace Puzzle
                     Matrix.CreateTranslation(posicionActual);
             else
                 return Matrix.CreateScale(escala) *
-                    (Matrix.CreateRotationX(MathHelper.ToRadians(rotacionActual.X)) *
-                    Matrix.CreateRotationY(MathHelper.ToRadians(rotacionActual.Y)) *
-                    Matrix.CreateRotationZ(MathHelper.ToRadians(rotacionActual.Z))) *
+                    (Matrix.CreateRotationX(MathHelper.ToRadians(rotacionCorrecta.X)) *
+                    Matrix.CreateRotationY(MathHelper.ToRadians(rotacionCorrecta.Y)) *
+                    Matrix.CreateRotationZ(MathHelper.ToRadians(rotacionCorrecta.Z))) *
                     Matrix.CreateTranslation(posicionCorrecta);
         }
 
@@ -192,9 +190,11 @@ namespace Puzzle
         {
             if (!acomodado)
             {
-                if (proximidadEnX() && proximidadEnY() && proximidadEnZ())
+                if (proximidadEnX() && proximidadEnY() 
+                    && proximidadEnZ() && anguloCorrecto())
                 {
                     posicionActual = posicionCorrecta;
+                    rotacionActual = rotacionCorrecta;
                     acomodado = true;
                 }
             }
@@ -229,11 +229,11 @@ namespace Puzzle
 
         Boolean anguloCorrecto()
         {
-            //if (posicionActual.Z - posicionCorrecta.Z < proximity &&
-            //    posicionCorrecta.Z - posicionActual.Z < proximity)
-            //    return true;
-            //else
-            return false;
+            if (rotacionActual.Z - rotacionCorrecta.Z < proximity &&
+                rotacionCorrecta.Z - rotacionActual.Z < proximity)
+                return true;
+            else
+                return false;
         }
 
         public void rotar(int grados)
