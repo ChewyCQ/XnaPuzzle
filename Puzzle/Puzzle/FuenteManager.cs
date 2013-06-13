@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-
 namespace Puzzle
 {
     /// <summary>
@@ -83,6 +82,9 @@ namespace Puzzle
             switch (estado)
             {
                 case Game1.estados.seleccion:
+                    minutos = 0;
+                    segundos = 0;
+                    modeloSeleccionado = 2;
                     break;
                 case Game1.estados.juego:
                     milisegundos += 17.85f;

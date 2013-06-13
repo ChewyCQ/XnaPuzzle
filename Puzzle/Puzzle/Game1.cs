@@ -127,6 +127,8 @@ namespace Puzzle
             switch (estado)
             {
                 case estados.seleccion:
+                    modelManager = null;
+                    botonManager = null;
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
                         if (mouseState.X > (screenWidth / 2))
@@ -140,13 +142,18 @@ namespace Puzzle
                     }
                     break;
                 case estados.juego:
-                    
+                    if (botonManager.estado == estados.fin)
+                        estado = estados.fin;
                     break;
                 case estados.fin:
-
+                    if (mouseState.LeftButton == ButtonState.Pressed)
+                    {
+                        estado = estados.seleccion;
+                        botonManager.estado = estados.seleccion;
+                        modelManager.estado = estados.seleccion;
+                    }
                     break;
             }
-
             base.Update(gameTime);
         }
 
@@ -169,7 +176,7 @@ namespace Puzzle
             Components.Add(modelManager);
             spriteManager.Enabled = false;
             spriteManager.Visible = false;
-            botonManager = new BotonManager(this, modelManager.models);
+            botonManager = new BotonManager(this, modelManager.models, screenHeight, screenWidth);
             Components.Add(botonManager);
             estado = estados.juego;
         }
@@ -180,7 +187,7 @@ namespace Puzzle
             Components.Add(modelManager);
             spriteManager.Enabled = false;
             spriteManager.Visible = false;
-            botonManager = new BotonManager(this, modelManager.models);
+            botonManager = new BotonManager(this, modelManager.models, screenHeight, screenWidth);
             Components.Add(botonManager);
             estado = estados.juego;
         }

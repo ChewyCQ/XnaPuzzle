@@ -26,7 +26,6 @@ namespace Puzzle
 
         Boolean vistaX = false;
 
-        //public enum estados{ seleccion, juego, fin};
         public Game1.estados estado;
 
         //Botones
@@ -41,13 +40,21 @@ namespace Puzzle
 
         FuenteManager fuenteManager;
 
-        public BotonManager(Game game, List<BasicModel> modelos)
+        int screenWidht;
+        int screenHeight;
+
+        public BotonManager(Game game, List<BasicModel> modelos, int screenHeight, int screenWidth)
             : base(game)
         {
             // TODO: Construct any child components here
             this.modelos = modelos;
             timeSinceLastClick = 0;
             estado = Game1.estados.juego;
+            this.screenHeight = screenHeight;
+            this.screenWidht = screenWidth;
+
+            fuenteManager = new FuenteManager(Game, modelos, screenHeight, screenWidht);
+            Game.Components.Add(fuenteManager);
         }
 
         public override void Initialize()
@@ -60,10 +67,6 @@ namespace Puzzle
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
-
-            //Tamaño pantalla
-            int ScreenWidht = Game.Window.ClientBounds.Width;
-            int ScreenHeight = Game.Window.ClientBounds.Height;
 
             float pos = 0;
 
@@ -83,47 +86,47 @@ namespace Puzzle
             //Cargar Sprites
             pos += upTextura.Height * escalaFlechas / 4;
             botonUp = new Sprite(upTextura,
-                new Vector2((ScreenWidht) - (upTextura.Width * escalaFlechas * 1.75f),
+                new Vector2((screenWidht) - (upTextura.Width * escalaFlechas * 1.75f),
                     pos),
                     escalaFlechas);
             pos += botonUp.alto;
             botonLeft = new Sprite(leftTextura,
-                new Vector2((ScreenWidht) - (leftTextura.Width * escalaFlechas * 2),
+                new Vector2((screenWidht) - (leftTextura.Width * escalaFlechas * 2),
                     pos),
                     escalaFlechas);
             //pos += botonLeft.alto;
             botonRight = new Sprite(rightTextura,
-                new Vector2((ScreenWidht) - (rightTextura.Width * escalaFlechas),
+                new Vector2((screenWidht) - (rightTextura.Width * escalaFlechas),
                     pos),
                     escalaFlechas);
             pos += botonRight.alto;
             botonDown = new Sprite(downTextura,
-                new Vector2((ScreenWidht) - (downTextura.Width * escalaFlechas * 1.75f),
+                new Vector2((screenWidht) - (downTextura.Width * escalaFlechas * 1.75f),
                     pos),
                     escalaFlechas);
             pos += botonDown.alto + 15;
             //Rotar izq
             giroIzq = new Sprite(giroIzqTextura,
-                new Vector2((ScreenWidht) - (giroIzqTextura.Width * escalaFlechas * 1.20f),
+                new Vector2((screenWidht) - (giroIzqTextura.Width * escalaFlechas * 1.20f),
                     pos),
                     escalaFlechas);
             pos += giroIzq.alto;
             //Mostrar/Ocultar piel
             cuerpo = new Sprite(cuerpoTextura,
-                new Vector2((ScreenWidht) - (cuerpoTextura.Width * 0.5f),
+                new Vector2((screenWidht) - (cuerpoTextura.Width * 0.5f),
                     pos),
                     0.5f);
             pos += cuerpo.alto;
             preview = new Sprite(previewTextura,
                 new Vector2(0,
-                    (float)(ScreenHeight - (previewTextura.Height * 0.75))),
+                    (float)(screenHeight - (previewTextura.Height * 0.75))),
                     0.75f);
             visionX = new Sprite(vistaXTextura,
-                new Vector2(ScreenWidht - vistaXTextura.Width,
-                    (float)(ScreenHeight - (vistaXTextura.Height * 0.75))),
+                new Vector2(screenWidht - vistaXTextura.Width,
+                    (float)(screenHeight - (vistaXTextura.Height * 0.75))),
                     0.75f);
-            fuenteManager = new FuenteManager(Game, modelos, ScreenHeight, ScreenWidht);
-            Game.Components.Add(fuenteManager);
+
+            
 
             base.LoadContent();
         }
@@ -355,6 +358,7 @@ namespace Puzzle
             }
             estado = Game1.estados.fin;
             fuenteManager.estado = Game1.estados.fin;
+            
             return true;
         }
     }

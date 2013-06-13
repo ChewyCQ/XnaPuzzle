@@ -29,7 +29,7 @@ namespace Puzzle
         int screenHeight;
         int screenWidth;
 
-        Game1.estados estado;
+        public Game1.estados estado;
 
         public ModelManager(Game game, sexo sex)
             : base(game)
@@ -37,6 +37,7 @@ namespace Puzzle
             // TODO: Construct any child components here
             
             genero = sex;
+            estado = Game1.estados.juego;
         }
 
         public ModelManager(Game game, sexo sex, int screenHeight, int screenWidth)
@@ -46,6 +47,7 @@ namespace Puzzle
             this.screenHeight = screenHeight;
             this.screenWidth = screenWidth;
             genero = sex;
+            estado = Game1.estados.juego;
         }
 
         /// <summary>
@@ -55,6 +57,8 @@ namespace Puzzle
         public override void Initialize()
         {
             // TODO: Add your initialization code here
+            
+
             switch (genero)
             {
                 case sexo.Masculino:
@@ -134,7 +138,6 @@ namespace Puzzle
                         new Vector3(-2.55f, -7.4f, 8.5f),
                         new Vector3(-26f, -10, 8.5f),
                         "Testiculo izquierdo"));
-                    
                     models.Add(new BasicModel(
                         Game.Content.Load<Model>(@"Masculino\uretra"),
                         new Vector3(0.108f * 7.2f, 0.108f * 7.2f, 0.108f * 7.2f) * 2f,
@@ -254,17 +257,18 @@ namespace Puzzle
                     break;
 
                 case Game1.estados.juego:
+                    // Loop through all models and call Update
+                    for (int i = 0; i < models.Count; ++i)
+                    {
+                        models[i].Update();
+                    }
                     break;
 
                 case Game1.estados.fin:
                     break;
             }
 
-            // Loop through all models and call Update
-            for (int i = 0; i < models.Count; ++i)
-            {
-                models[i].Update();
-            }
+            
 
             base.Update(gameTime);
         }
