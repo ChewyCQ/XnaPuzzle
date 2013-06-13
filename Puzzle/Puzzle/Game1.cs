@@ -127,10 +127,10 @@ namespace Puzzle
             switch (estado)
             {
                 case estados.seleccion:
-                    modelManager = null;
-                    botonManager = null;
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
+                        modelManager = null;
+                        botonManager = null;
                         if (mouseState.X > (screenWidth / 2))
                         {
                             femeninooSeleccionado();
@@ -146,11 +146,19 @@ namespace Puzzle
                         estado = estados.fin;
                     break;
                 case estados.fin:
+                    
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
                         estado = estados.seleccion;
                         botonManager.estado = estados.seleccion;
                         modelManager.estado = estados.seleccion;
+                        spriteManager.Enabled = true;
+                        spriteManager.Visible = true;
+                        int time = 230;
+                        while (time > 0)
+                        {
+                            time--;
+                        }
                     }
                     break;
             }

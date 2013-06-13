@@ -137,6 +137,7 @@ namespace Puzzle
             switch (estado)
             {
                 case Game1.estados.seleccion:
+                    fuenteManager = new FuenteManager(Game, modelos, screenHeight, screenWidht);
                     break;
 
                 case Game1.estados.juego:
@@ -200,10 +201,10 @@ namespace Puzzle
                     if (!vistaX)
                         GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-                    for (int c = modelosNum; c < modelos.Count; c++) 
-                    {
-                        modelos.ElementAt(c).Draw(((Game1)Game).camera);
-                    }
+                    //for (int c = modelosNum; c < modelos.Count; c++) 
+                    //{
+                    //    modelos.ElementAt(c).Draw(((Game1)Game).camera);
+                    //}
                     fuenteManager.Draw(gameTime);
                     break;
             }
